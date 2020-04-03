@@ -9,8 +9,15 @@
 import SwiftUI
 
 struct RegisterView: View {
+  @EnvironmentObject var userManager: UserManager
+  @ObservedObject var keyboardHandler: KeyboardFollower
+  
   @State var username: String = ""
   @State var password: String = ""
+  
+  init(keyboardHandler: KeyboardFollower) {
+    self.keyboardHandler = keyboardHandler
+  }
   
   var body: some View {
     VStack {
@@ -46,15 +53,30 @@ struct RegisterView: View {
       }
       .bordered()
     }
+    .padding(.bottom, keyboardHandler.keyboardHeight)
+    .padding()
+  }
+}
+
+// MARK: - Event Handlers
+extension RegisterView {
+
+  func registerUser() {
+    userManager.signUp(username: username,
+                       password: password)
   }
   
-  func registerUser() {}
-  
-  func loginUser() {}
+  func loginUser() {
+    userManager.login(username: username,
+                       password: password)
+  }
 }
 
 struct RegisterView_Previews: PreviewProvider {
+  static let userManager = UserManager(username: "DanTestX")
+  
     static var previews: some View {
-        RegisterView()
+        RegisterView(keyboardHandler: KeyboardFollower())
+        .environmentObject(userManager)
     }
 }

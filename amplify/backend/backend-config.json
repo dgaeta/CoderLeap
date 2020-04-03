@@ -1,0 +1,9 @@
+{
+	"auth": {
+		"coderleapa64cdddd": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	}
+}

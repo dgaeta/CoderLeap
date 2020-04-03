@@ -17,11 +17,11 @@ struct WelcomeView: View {
           Text("Welcome to")
             .font(.headline)
             .bold()
-            .bordered()
+
           Text("CoderLeap")
             .font(.largeTitle)
             .bold()
-            .bordered()
+
         }
         .foregroundColor(.black)
         .lineLimit(2)

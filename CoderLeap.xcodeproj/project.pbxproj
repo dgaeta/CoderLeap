@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01DA45D1D235347F7D3EAFC9 /* Pods_CoderLeapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC7B84D33D5CD5D3EAA3E5F /* Pods_CoderLeapTests.framework */; };
+		070983159ADFF470798A0A52 /* Pods_CoderLeap_CoderLeapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E446F394E48B7E6A860515F /* Pods_CoderLeap_CoderLeapUITests.framework */; };
+		777BD9584704299A7864769E /* Pods_CoderLeap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F49A1F771491E9E3C0783B /* Pods_CoderLeap.framework */; };
 		821B0BAD24376F1F008BB870 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821B0BAC24376F1F008BB870 /* AppDelegate.swift */; };
 		821B0BAF24376F1F008BB870 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821B0BAE24376F1F008BB870 /* SceneDelegate.swift */; };
 		821B0BB124376F1F008BB870 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821B0BB024376F1F008BB870 /* ContentView.swift */; };
@@ -20,6 +23,11 @@
 		82CA79B32437924F00FC7702 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA79B22437924F00FC7702 /* AuthenticationView.swift */; };
 		82CA79B52437928100FC7702 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA79B42437928100FC7702 /* RegisterView.swift */; };
 		82CA79B8243793C400FC7702 /* BorderedViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA79B7243793C400FC7702 /* BorderedViewModifier.swift */; };
+		82CA79BA2437ABD400FC7702 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA79B92437ABD400FC7702 /* UserManager.swift */; };
+		82CA79BC2437AEC300FC7702 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA79BB2437AEC300FC7702 /* Profile.swift */; };
+		82CA79C12437B3EA00FC7702 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 82CA79BF2437B3EA00FC7702 /* amplifyconfiguration.json */; };
+		82CA79C22437B3EA00FC7702 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 82CA79C02437B3EA00FC7702 /* awsconfiguration.json */; };
+		82CA79FB2437DB0100FC7702 /* KeyboardFollower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA79FA2437DB0100FC7702 /* KeyboardFollower.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E446F394E48B7E6A860515F /* Pods_CoderLeap_CoderLeapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoderLeap_CoderLeapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55E634024AFB444645F0D04C /* Pods-CoderLeap-CoderLeapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoderLeap-CoderLeapUITests.release.xcconfig"; path = "Target Support Files/Pods-CoderLeap-CoderLeapUITests/Pods-CoderLeap-CoderLeapUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7C4E6D7E548DF1E87A9CC97B /* Pods-CoderLeap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoderLeap.release.xcconfig"; path = "Target Support Files/Pods-CoderLeap/Pods-CoderLeap.release.xcconfig"; sourceTree = "<group>"; };
 		821B0BA924376F1F008BB870 /* CoderLeap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoderLeap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		821B0BAC24376F1F008BB870 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		821B0BAE24376F1F008BB870 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +70,17 @@
 		82CA79B22437924F00FC7702 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		82CA79B42437928100FC7702 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		82CA79B7243793C400FC7702 /* BorderedViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedViewModifier.swift; sourceTree = "<group>"; };
+		82CA79B92437ABD400FC7702 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		82CA79BB2437AEC300FC7702 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		82CA79BF2437B3EA00FC7702 /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = SOURCE_ROOT; };
+		82CA79C02437B3EA00FC7702 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
+		82CA79FA2437DB0100FC7702 /* KeyboardFollower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardFollower.swift; sourceTree = "<group>"; };
+		8FC7B84D33D5CD5D3EAA3E5F /* Pods_CoderLeapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoderLeapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92F49A1F771491E9E3C0783B /* Pods_CoderLeap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoderLeap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99C38E988934B53C99A62FD0 /* Pods-CoderLeap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoderLeap.debug.xcconfig"; path = "Target Support Files/Pods-CoderLeap/Pods-CoderLeap.debug.xcconfig"; sourceTree = "<group>"; };
+		B2075AD88C4B72CCC7DAF8C5 /* Pods-CoderLeapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoderLeapTests.debug.xcconfig"; path = "Target Support Files/Pods-CoderLeapTests/Pods-CoderLeapTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CB1373500B2B4D96B82292FA /* Pods-CoderLeapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoderLeapTests.release.xcconfig"; path = "Target Support Files/Pods-CoderLeapTests/Pods-CoderLeapTests.release.xcconfig"; sourceTree = "<group>"; };
+		ED183E42EB5921169C655A8E /* Pods-CoderLeap-CoderLeapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoderLeap-CoderLeapUITests.debug.xcconfig"; path = "Target Support Files/Pods-CoderLeap-CoderLeapUITests/Pods-CoderLeap-CoderLeapUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				777BD9584704299A7864769E /* Pods_CoderLeap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01DA45D1D235347F7D3EAFC9 /* Pods_CoderLeapTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,12 +104,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				070983159ADFF470798A0A52 /* Pods_CoderLeap_CoderLeapUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		60A2C45BA799454DA3521C8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92F49A1F771491E9E3C0783B /* Pods_CoderLeap.framework */,
+				3E446F394E48B7E6A860515F /* Pods_CoderLeap_CoderLeapUITests.framework */,
+				8FC7B84D33D5CD5D3EAA3E5F /* Pods_CoderLeapTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		821B0BA024376F1F008BB870 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +128,8 @@
 				821B0BC224376F20008BB870 /* CoderLeapTests */,
 				821B0BCD24376F20008BB870 /* CoderLeapUITests */,
 				821B0BAA24376F1F008BB870 /* Products */,
+				86EB76AE2D0A71C51CD87B3F /* Pods */,
+				60A2C45BA799454DA3521C8B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +146,8 @@
 		821B0BAB24376F1F008BB870 /* CoderLeap */ = {
 			isa = PBXGroup;
 			children = (
+				82CA79BF2437B3EA00FC7702 /* amplifyconfiguration.json */,
+				82CA79C02437B3EA00FC7702 /* awsconfiguration.json */,
 				821B0BAC24376F1F008BB870 /* AppDelegate.swift */,
 				821B0BAE24376F1F008BB870 /* SceneDelegate.swift */,
 				821B0BB024376F1F008BB870 /* ContentView.swift */,
@@ -161,6 +200,8 @@
 		82CA79AB24377E7600FC7702 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				82CA79B92437ABD400FC7702 /* UserManager.swift */,
+				82CA79BB2437AEC300FC7702 /* Profile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -168,6 +209,7 @@
 		82CA79AC24377E7C00FC7702 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				82CA79FA2437DB0100FC7702 /* KeyboardFollower.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -191,6 +233,19 @@
 			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
+		86EB76AE2D0A71C51CD87B3F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				99C38E988934B53C99A62FD0 /* Pods-CoderLeap.debug.xcconfig */,
+				7C4E6D7E548DF1E87A9CC97B /* Pods-CoderLeap.release.xcconfig */,
+				ED183E42EB5921169C655A8E /* Pods-CoderLeap-CoderLeapUITests.debug.xcconfig */,
+				55E634024AFB444645F0D04C /* Pods-CoderLeap-CoderLeapUITests.release.xcconfig */,
+				B2075AD88C4B72CCC7DAF8C5 /* Pods-CoderLeapTests.debug.xcconfig */,
+				CB1373500B2B4D96B82292FA /* Pods-CoderLeapTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -198,9 +253,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 821B0BD324376F20008BB870 /* Build configuration list for PBXNativeTarget "CoderLeap" */;
 			buildPhases = (
+				BFFF8078EFDCBAD4291D8682 /* [CP] Check Pods Manifest.lock */,
 				821B0BA524376F1F008BB870 /* Sources */,
 				821B0BA624376F1F008BB870 /* Frameworks */,
 				821B0BA724376F1F008BB870 /* Resources */,
+				F5D0904165625051F968AF4F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -215,6 +272,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 821B0BD624376F20008BB870 /* Build configuration list for PBXNativeTarget "CoderLeapTests" */;
 			buildPhases = (
+				92901FC2045A85D0C78954AD /* [CP] Check Pods Manifest.lock */,
 				821B0BBB24376F20008BB870 /* Sources */,
 				821B0BBC24376F20008BB870 /* Frameworks */,
 				821B0BBD24376F20008BB870 /* Resources */,
@@ -233,9 +291,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 821B0BD924376F20008BB870 /* Build configuration list for PBXNativeTarget "CoderLeapUITests" */;
 			buildPhases = (
+				68C7279850BCA94318A6A58B /* [CP] Check Pods Manifest.lock */,
 				821B0BC624376F20008BB870 /* Sources */,
 				821B0BC724376F20008BB870 /* Frameworks */,
 				821B0BC824376F20008BB870 /* Resources */,
+				52FA16B773947895EC156BE1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -297,6 +357,8 @@
 			files = (
 				821B0BB924376F20008BB870 /* LaunchScreen.storyboard in Resources */,
 				821B0BB624376F20008BB870 /* Preview Assets.xcassets in Resources */,
+				82CA79C22437B3EA00FC7702 /* awsconfiguration.json in Resources */,
+				82CA79C12437B3EA00FC7702 /* amplifyconfiguration.json in Resources */,
 				821B0BB324376F20008BB870 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,11 +379,117 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		52FA16B773947895EC156BE1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoderLeap-CoderLeapUITests/Pods-CoderLeap-CoderLeapUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoderLeap-CoderLeapUITests/Pods-CoderLeap-CoderLeapUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoderLeap-CoderLeapUITests/Pods-CoderLeap-CoderLeapUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68C7279850BCA94318A6A58B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoderLeap-CoderLeapUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92901FC2045A85D0C78954AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoderLeapTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFFF8078EFDCBAD4291D8682 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoderLeap-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5D0904165625051F968AF4F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoderLeap/Pods-CoderLeap-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoderLeap/Pods-CoderLeap-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoderLeap/Pods-CoderLeap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		821B0BA524376F1F008BB870 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82CA79BA2437ABD400FC7702 /* UserManager.swift in Sources */,
+				82CA79FB2437DB0100FC7702 /* KeyboardFollower.swift in Sources */,
+				82CA79BC2437AEC300FC7702 /* Profile.swift in Sources */,
 				821B0BAD24376F1F008BB870 /* AppDelegate.swift in Sources */,
 				821B0BAF24376F1F008BB870 /* SceneDelegate.swift in Sources */,
 				82CA79B32437924F00FC7702 /* AuthenticationView.swift in Sources */,
@@ -492,6 +660,7 @@
 		};
 		821B0BD424376F20008BB870 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99C38E988934B53C99A62FD0 /* Pods-CoderLeap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -512,6 +681,7 @@
 		};
 		821B0BD524376F20008BB870 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C4E6D7E548DF1E87A9CC97B /* Pods-CoderLeap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +702,7 @@
 		};
 		821B0BD724376F20008BB870 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2075AD88C4B72CCC7DAF8C5 /* Pods-CoderLeapTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -554,6 +725,7 @@
 		};
 		821B0BD824376F20008BB870 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB1373500B2B4D96B82292FA /* Pods-CoderLeapTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -576,6 +748,7 @@
 		};
 		821B0BDA24376F20008BB870 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED183E42EB5921169C655A8E /* Pods-CoderLeap-CoderLeapUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -596,6 +769,7 @@
 		};
 		821B0BDB24376F20008BB870 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55E634024AFB444645F0D04C /* Pods-CoderLeap-CoderLeapUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

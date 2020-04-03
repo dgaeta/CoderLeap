@@ -9,8 +9,19 @@
 import SwiftUI
 
 struct ContentView: View {
+  @EnvironmentObject var usermanager: UserManager
     var body: some View {
+      VStack {
         WelcomeView()
+        
+        Group {
+          if self.usermanager.signedIn {
+           Text("Signed in")
+          } else {
+            RegisterView(keyboardHandler: KeyboardFollower())
+          }
+        }
+      }
     }
 }
 

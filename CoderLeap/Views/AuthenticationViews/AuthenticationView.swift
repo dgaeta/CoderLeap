@@ -13,7 +13,7 @@ struct AuthenticationView: View {
       VStack {
         WelcomeView()
         
-        RegisterView()
+        RegisterView(keyboardHandler: KeyboardFollower())
       }
     }
 }
