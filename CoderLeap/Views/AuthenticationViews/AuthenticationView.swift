@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  AuthenticationView.swift
 //  CoderLeap
 //
 //  Created by Daniel Gaeta on 4/3/20.
@@ -8,14 +8,18 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct AuthenticationView: View {
     var body: some View {
+      VStack {
         WelcomeView()
+        
+        RegisterView()
+      }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct AuthenticationView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        AuthenticationView()
     }
 }
