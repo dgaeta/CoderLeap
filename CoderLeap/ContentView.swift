@@ -12,14 +12,15 @@ struct ContentView: View {
   @EnvironmentObject var usermanager: UserManager
     var body: some View {
       VStack {
-        WelcomeView()
+        
         
         Group {
           if self.usermanager.signedIn {
-           Text("Signed in")
+            App()
           } else {
-            // RegisterView(keyboardHandler: KeyboardFollower())
-            DragAndDropTest()
+            WelcomeView()
+            
+           RegisterView(keyboardHandler: KeyboardFollower())
           }
         }
       }

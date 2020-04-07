@@ -29,6 +29,7 @@
 		82CA79C22437B3EA00FC7702 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 82CA79C02437B3EA00FC7702 /* awsconfiguration.json */; };
 		82CA79FB2437DB0100FC7702 /* KeyboardFollower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA79FA2437DB0100FC7702 /* KeyboardFollower.swift */; };
 		82CA79FE243A479200FC7702 /* DragAndDropTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA79FD243A479200FC7702 /* DragAndDropTest.swift */; };
+		82CA7A01243D0B4400FC7702 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA7A00243D0B4400FC7702 /* App.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		82CA79C02437B3EA00FC7702 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
 		82CA79FA2437DB0100FC7702 /* KeyboardFollower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardFollower.swift; sourceTree = "<group>"; };
 		82CA79FD243A479200FC7702 /* DragAndDropTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAndDropTest.swift; sourceTree = "<group>"; };
+		82CA7A00243D0B4400FC7702 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		8FC7B84D33D5CD5D3EAA3E5F /* Pods_CoderLeapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoderLeapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F49A1F771491E9E3C0783B /* Pods_CoderLeap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoderLeap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99C38E988934B53C99A62FD0 /* Pods-CoderLeap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoderLeap.debug.xcconfig"; path = "Target Support Files/Pods-CoderLeap/Pods-CoderLeap.debug.xcconfig"; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		821B0BDC24377C78008BB870 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				82CA79FF243D0B2200FC7702 /* App */,
 				82CA79FC243A435700FC7702 /* DragAndDropTest */,
 				82CA79B6243793AF00FC7702 /* ViewModifiers */,
 				82CA79AD2437846400FC7702 /* AuthenticationViews */,
@@ -242,6 +245,14 @@
 				82CA79FD243A479200FC7702 /* DragAndDropTest.swift */,
 			);
 			path = DragAndDropTest;
+			sourceTree = "<group>";
+		};
+		82CA79FF243D0B2200FC7702 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				82CA7A00243D0B4400FC7702 /* App.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 		86EB76AE2D0A71C51CD87B3F /* Pods */ = {
@@ -498,6 +509,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82CA7A01243D0B4400FC7702 /* App.swift in Sources */,
 				82CA79BA2437ABD400FC7702 /* UserManager.swift in Sources */,
 				82CA79FB2437DB0100FC7702 /* KeyboardFollower.swift in Sources */,
 				82CA79BC2437AEC300FC7702 /* Profile.swift in Sources */,

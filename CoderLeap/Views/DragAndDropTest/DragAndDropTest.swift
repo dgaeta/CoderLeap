@@ -114,15 +114,15 @@ struct DroppableArea: View {
       }
       
       func getGridPosition(location: CGPoint) -> Int {
-          if location.y <= 450 {
+          if location.y <= 540 {
               return 1
-          } else if location.y <= 500 {
+          } else if location.y <= 590 {
               return 2
-          } else if location.y <= 550 {
+          } else if location.y <= 640 {
               return 3
-          } else if location.y <= 600 {
+          } else if location.y <= 690 {
               return 4
-          } else if location.y <= 650 {
+          } else if location.y <= 740 {
               return 5
           }
           else {
@@ -134,28 +134,34 @@ struct DroppableArea: View {
 
 struct DragAndDropTest: View {
   @State private var givenBlocks = [
-    "x = 30",
-    "if x < 45:",
-    "print(\"x is less than 45\")",
-    "else:",
-    "print(\"x is more than 45\")"
+    "Grab the other slice and apply jelly",
+    "Get 2 slices of bread",
+    "Eat sandwiche",
+    "Put both slices together",
+    "Grab a slice and apply peanut butter"
   ]
   
   var body: some View {
-    HStack(spacing: 10) {
+    VStack {
+      Image("pbnj")
+      .resizable()
+      .frame(width: 400, height: 300)
       
-      VStack(spacing: 10) {
-        ScrollView {
-          ForEach(0..<self.givenBlocks.count) { index in
-            DragableImage(codeText: self.givenBlocks[index])
-          }
-        }
-      }.frame(width: 200, height: 350)
-      
-      DroppableArea()
-      .frame(width: 200, height: 350)
+      HStack(spacing: 10) {
         
-    }.padding(40)
+        VStack(spacing: 10) {
+          ScrollView {
+            ForEach(0..<self.givenBlocks.count) { index in
+              DragableImage(codeText: self.givenBlocks[index])
+            }
+          }
+        }.frame(width: 200, height: 350)
+        
+        DroppableArea()
+        .frame(width: 200, height: 350)
+          
+      }.padding(40)
+    }
   }
 }
 
