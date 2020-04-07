@@ -18,7 +18,8 @@ struct ContentView: View {
           if self.usermanager.signedIn {
            Text("Signed in")
           } else {
-            RegisterView(keyboardHandler: KeyboardFollower())
+            // RegisterView(keyboardHandler: KeyboardFollower())
+            DragAndDropTest()
           }
         }
       }
