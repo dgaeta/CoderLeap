@@ -103,6 +103,7 @@ struct DragAndDropTest: View {
                   DispatchQueue.main.async {
                       if let codeData = codeData as? Data {
                         self.codeBlocks[gridPosition] = String(data: codeData, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
+                        self.active = 0
                       }
                   }
               }
