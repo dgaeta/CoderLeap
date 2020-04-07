@@ -8,75 +8,62 @@
 
 import SwiftUI
 
-struct DragAndDropTest: View {
-  var body: some View {
-    HStack(spacing: 10) {
-      VStack(spacing: 10) {
-        DragableImage(codeText: "FOR LOOP 1")
+struct DragableImage: View {
+    let codeText: String
+    
+    var body: some View {
+        Text(codeText)
+            .frame(width: 200, height: 50)
+            .clipShape(Rectangle())
+            .overlay(Rectangle().stroke(Color.white, lineWidth: 2))
+            .padding(2)
+            .overlay(Rectangle().strokeBorder(Color.black.opacity(0.1)))
+            .shadow(radius: 3)
+            .padding(4)
+          .onDrag { return NSItemProvider(object: self.codeText  as NSString) }
+    }
+}
+
+struct DroppableArea: View {
+    @State private var codeBlocks: [Int: String] = [:]
+    @State private var active = 0
+    
+    var body: some View {
+      let dropDelegate = MyDropDelegate(codeBlocks: $codeBlocks, active: $active)
         
-        DragableImage(codeText: "get statement")
-      }.padding(50)
-      
-      DroppableArea()
-      .padding(20)
-    }.padding(40)
-  }
-  
-  
-  struct DragableImage: View {
-      let codeText: String
-      
-      var body: some View {
-          Text(codeText)
-              .frame(width: 150, height: 150)
-              .clipShape(Circle())
-              .overlay(Circle().stroke(Color.white, lineWidth: 2))
-              .padding(2)
-              .overlay(Circle().strokeBorder(Color.black.opacity(0.1)))
-              .shadow(radius: 3)
-              .padding(4)
-            .onDrag { return NSItemProvider(object: self.codeText  as NSString) }
-      }
-  }
-  
-  struct DroppableArea: View {
-      @State private var codeBlocks: [Int: String] = [:]
-      @State private var active = 0
-      
-      var body: some View {
-        let dropDelegate = MyDropDelegate(codeBlocks: $codeBlocks, active: $active)
-          
-          return VStack {
-              VStack {
-                  GridCell(active: self.active == 1, codeBlock: codeBlocks[1])
-                  
-                  GridCell(active: self.active == 2, codeBlock: codeBlocks[2])
+        return VStack {
+          VStack(spacing: 10) {
+
+                GridCell(active: self.active == 1, codeBlock: codeBlocks[1])
+              
+                GridCell(active: self.active == 2, codeBlock: codeBlocks[2])
 
                   GridCell(active: self.active == 3, codeBlock: codeBlocks[3])
 
                   GridCell(active: self.active == 4, codeBlock: codeBlocks[4])
-              }
-              
-          }
-          .background(Rectangle().fill(Color.gray))
-          .frame(width: 200, height: 300)
-          .onDrop(of: ["public.plain-text"], delegate: dropDelegate)
-          
-      }
-  }
+                
+                  GridCell(active: self.active == 5, codeBlock: codeBlocks[5])
+                
+            }
+            
+        }
+        .background(Rectangle().fill(Color.gray))
+        .onDrop(of: ["public.plain-text"], delegate: dropDelegate)
+        
+    }
   
   struct GridCell: View {
       let active: Bool
       let codeBlock: String?
       
       var body: some View {
-        let img = Text(codeBlock != nil ? "\(codeBlock!)" : "")
-              .frame(width: 150, height: 150)
+        let code = Text(codeBlock != nil ? "\(codeBlock!)" : "")
+              .frame(width: 200, height: 50)
           
           return Rectangle()
               .fill(self.active ? Color.green : Color.clear)
-              .frame(width: 150, height: 150)
-              .overlay(img)
+              .frame(width: 200, height: 50)
+              .overlay(code)
       }
   }
   
@@ -127,18 +114,48 @@ struct DragAndDropTest: View {
       }
       
       func getGridPosition(location: CGPoint) -> Int {
-          if location.y <= 300 {
+          if location.y <= 450 {
               return 1
-          } else if location.y <= 450 {
+          } else if location.y <= 500 {
               return 2
-          } else if location.y <= 600 {
+          } else if location.y <= 550 {
               return 3
-          } else if location.y <= 750 {
+          } else if location.y <= 600 {
               return 4
-          } else {
+          } else if location.y <= 650 {
+              return 5
+          }
+          else {
               return 0
           }
       }
+  }
+}
+
+struct DragAndDropTest: View {
+  @State private var givenBlocks = [
+    "x = 30",
+    "if x < 45:",
+    "print(\"x is less than 45\")",
+    "else:",
+    "print(\"x is more than 45\")"
+  ]
+  
+  var body: some View {
+    HStack(spacing: 10) {
+      
+      VStack(spacing: 10) {
+        ScrollView {
+          ForEach(0..<self.givenBlocks.count) { index in
+            DragableImage(codeText: self.givenBlocks[index])
+          }
+        }
+      }.frame(width: 200, height: 350)
+      
+      DroppableArea()
+      .frame(width: 200, height: 350)
+        
+    }.padding(40)
   }
 }
 
