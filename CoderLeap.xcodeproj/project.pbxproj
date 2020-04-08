@@ -30,6 +30,10 @@
 		82CA79FB2437DB0100FC7702 /* KeyboardFollower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA79FA2437DB0100FC7702 /* KeyboardFollower.swift */; };
 		82CA79FE243A479200FC7702 /* DragAndDropTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA79FD243A479200FC7702 /* DragAndDropTest.swift */; };
 		82CA7A01243D0B4400FC7702 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA7A00243D0B4400FC7702 /* App.swift */; };
+		82CA7A03243D706500FC7702 /* ChatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA7A02243D706500FC7702 /* ChatHelper.swift */; };
+		82CA7A06243D724600FC7702 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA7A05243D724600FC7702 /* ChatView.swift */; };
+		82CA7A08243D727300FC7702 /* ContentMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA7A07243D727300FC7702 /* ContentMessageView.swift */; };
+		82CA7A0A243D734500FC7702 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA7A09243D734500FC7702 /* MessageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +83,10 @@
 		82CA79FA2437DB0100FC7702 /* KeyboardFollower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardFollower.swift; sourceTree = "<group>"; };
 		82CA79FD243A479200FC7702 /* DragAndDropTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAndDropTest.swift; sourceTree = "<group>"; };
 		82CA7A00243D0B4400FC7702 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		82CA7A02243D706500FC7702 /* ChatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHelper.swift; sourceTree = "<group>"; };
+		82CA7A05243D724600FC7702 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		82CA7A07243D727300FC7702 /* ContentMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMessageView.swift; sourceTree = "<group>"; };
+		82CA7A09243D734500FC7702 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		8FC7B84D33D5CD5D3EAA3E5F /* Pods_CoderLeapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoderLeapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F49A1F771491E9E3C0783B /* Pods_CoderLeap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoderLeap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99C38E988934B53C99A62FD0 /* Pods-CoderLeap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoderLeap.debug.xcconfig"; path = "Target Support Files/Pods-CoderLeap/Pods-CoderLeap.debug.xcconfig"; sourceTree = "<group>"; };
@@ -195,6 +203,7 @@
 		821B0BDC24377C78008BB870 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				82CA7A04243D723100FC7702 /* Chat */,
 				82CA79FF243D0B2200FC7702 /* App */,
 				82CA79FC243A435700FC7702 /* DragAndDropTest */,
 				82CA79B6243793AF00FC7702 /* ViewModifiers */,
@@ -208,6 +217,7 @@
 			children = (
 				82CA79B92437ABD400FC7702 /* UserManager.swift */,
 				82CA79BB2437AEC300FC7702 /* Profile.swift */,
+				82CA7A02243D706500FC7702 /* ChatHelper.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -253,6 +263,16 @@
 				82CA7A00243D0B4400FC7702 /* App.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		82CA7A04243D723100FC7702 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				82CA7A05243D724600FC7702 /* ChatView.swift */,
+				82CA7A07243D727300FC7702 /* ContentMessageView.swift */,
+				82CA7A09243D734500FC7702 /* MessageView.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		86EB76AE2D0A71C51CD87B3F /* Pods */ = {
@@ -514,13 +534,17 @@
 				82CA79FB2437DB0100FC7702 /* KeyboardFollower.swift in Sources */,
 				82CA79BC2437AEC300FC7702 /* Profile.swift in Sources */,
 				821B0BAD24376F1F008BB870 /* AppDelegate.swift in Sources */,
+				82CA7A0A243D734500FC7702 /* MessageView.swift in Sources */,
 				821B0BAF24376F1F008BB870 /* SceneDelegate.swift in Sources */,
 				82CA79B32437924F00FC7702 /* AuthenticationView.swift in Sources */,
+				82CA7A06243D724600FC7702 /* ChatView.swift in Sources */,
 				82CA79B52437928100FC7702 /* RegisterView.swift in Sources */,
 				821B0BB124376F1F008BB870 /* ContentView.swift in Sources */,
 				82CA79B1243784B900FC7702 /* LogoImageView.swift in Sources */,
 				82CA79B8243793C400FC7702 /* BorderedViewModifier.swift in Sources */,
+				82CA7A03243D706500FC7702 /* ChatHelper.swift in Sources */,
 				82CA79FE243A479200FC7702 /* DragAndDropTest.swift in Sources */,
+				82CA7A08243D727300FC7702 /* ContentMessageView.swift in Sources */,
 				82CA79AF2437848700FC7702 /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

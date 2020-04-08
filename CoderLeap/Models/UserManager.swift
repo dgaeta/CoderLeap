@@ -12,18 +12,21 @@ import Foundation
 import AWSMobileClient
 
 final class UserManager: ObservableObject {
-  @Published var profile: Profile = Profile(username: "")
-  @Published var signedIn: Bool = false
+  @Published var profile: Profile
+  @Published var signedIn: Bool
   
   var isRegistered: Bool {
     return profile.username.isEmpty == true
   }
   
   init() {
+    profile = Profile(username: "")
+    self.signedIn = false
   }
   
   init(username: String) {
-    self.profile.username = username
+    self.profile = Profile(username: username)
+    self.signedIn = false
   }
   
   func persistProfile() {
@@ -54,7 +57,9 @@ final class UserManager: ObservableObject {
           
           self.profile.username = username
           self.persistProfile()
-          self.signedIn = true
+          DispatchQueue.main.async {
+            self.signedIn = true
+          }
         } else if let error = error {
           print("ERROR ON SIGNUP")
             if let error = error as? AWSMobileClientError {
