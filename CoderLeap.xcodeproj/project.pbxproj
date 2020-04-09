@@ -18,6 +18,7 @@
 		821B0BB924376F20008BB870 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 821B0BB724376F20008BB870 /* LaunchScreen.storyboard */; };
 		821B0BC424376F20008BB870 /* CoderLeapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821B0BC324376F20008BB870 /* CoderLeapTests.swift */; };
 		821B0BCF24376F20008BB870 /* CoderLeapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821B0BCE24376F20008BB870 /* CoderLeapUITests.swift */; };
+		82257CF1243F907F0093A2DB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82257CF0243F907F0093A2DB /* API.swift */; };
 		82CA79AF2437848700FC7702 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA79AE2437848700FC7702 /* WelcomeView.swift */; };
 		82CA79B1243784B900FC7702 /* LogoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA79B0243784B900FC7702 /* LogoImageView.swift */; };
 		82CA79B32437924F00FC7702 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA79B22437924F00FC7702 /* AuthenticationView.swift */; };
@@ -71,6 +72,7 @@
 		821B0BCA24376F20008BB870 /* CoderLeapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoderLeapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		821B0BCE24376F20008BB870 /* CoderLeapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoderLeapUITests.swift; sourceTree = "<group>"; };
 		821B0BD024376F20008BB870 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82257CF0243F907F0093A2DB /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = SOURCE_ROOT; };
 		82CA79AE2437848700FC7702 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		82CA79B0243784B900FC7702 /* LogoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoImageView.swift; sourceTree = "<group>"; };
 		82CA79B22437924F00FC7702 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		821B0BAB24376F1F008BB870 /* CoderLeap */ = {
 			isa = PBXGroup;
 			children = (
+				82257CF0243F907F0093A2DB /* API.swift */,
 				82CA79BF2437B3EA00FC7702 /* amplifyconfiguration.json */,
 				82CA79C02437B3EA00FC7702 /* awsconfiguration.json */,
 				821B0BAC24376F1F008BB870 /* AppDelegate.swift */,
@@ -545,6 +548,7 @@
 				82CA7A03243D706500FC7702 /* ChatHelper.swift in Sources */,
 				82CA79FE243A479200FC7702 /* DragAndDropTest.swift in Sources */,
 				82CA7A08243D727300FC7702 /* ContentMessageView.swift in Sources */,
+				82257CF1243F907F0093A2DB /* API.swift in Sources */,
 				82CA79AF2437848700FC7702 /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

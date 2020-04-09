@@ -1,0 +1,88 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateChat(
+  $input: CreateChatInput!
+  $condition: ModelChatConditionInput
+) {
+  createChat(input: $input, condition: $condition) {
+    id
+    userId
+    messages {
+      items {
+        id
+        chatId
+        content
+        when
+      }
+      nextToken
+    }
+  }
+}
+mutation UpdateChat(
+  $input: UpdateChatInput!
+  $condition: ModelChatConditionInput
+) {
+  updateChat(input: $input, condition: $condition) {
+    id
+    userId
+    messages {
+      items {
+        id
+        chatId
+        content
+        when
+      }
+      nextToken
+    }
+  }
+}
+mutation DeleteChat(
+  $input: DeleteChatInput!
+  $condition: ModelChatConditionInput
+) {
+  deleteChat(input: $input, condition: $condition) {
+    id
+    userId
+    messages {
+      items {
+        id
+        chatId
+        content
+        when
+      }
+      nextToken
+    }
+  }
+}
+mutation CreateMessage(
+  $input: CreateMessageInput!
+  $condition: ModelMessageConditionInput
+) {
+  createMessage(input: $input, condition: $condition) {
+    id
+    chatId
+    content
+    when
+  }
+}
+mutation UpdateMessage(
+  $input: UpdateMessageInput!
+  $condition: ModelMessageConditionInput
+) {
+  updateMessage(input: $input, condition: $condition) {
+    id
+    chatId
+    content
+    when
+  }
+}
+mutation DeleteMessage(
+  $input: DeleteMessageInput!
+  $condition: ModelMessageConditionInput
+) {
+  deleteMessage(input: $input, condition: $condition) {
+    id
+    chatId
+    content
+    when
+  }
+}

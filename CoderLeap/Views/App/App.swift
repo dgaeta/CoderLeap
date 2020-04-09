@@ -11,10 +11,23 @@ import SwiftUI
 struct App: View {
     var body: some View {
       NavigationView {
-        VStack {
-          DragAndDropTest()
+        
+        TabView {
+            DragAndDropTest()
+                .tabItem {
+                    Image(systemName: "gamecontroller")
+                    Text("Puzzles")
+                }
+
+            ChatView()
+                .tabItem {
+                    Image(systemName: "square.and.pencil")
+                    Text("Chat")
+                }
         }
         .navigationBarTitle(Text("CoderLeap"), displayMode: .inline)
+      
+        
       }
     }
 }

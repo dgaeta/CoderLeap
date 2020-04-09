@@ -1,0 +1,70 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateChat {
+  onCreateChat {
+    id
+    userId
+    messages {
+      items {
+        id
+        chatId
+        content
+        when
+      }
+      nextToken
+    }
+  }
+}
+subscription OnUpdateChat {
+  onUpdateChat {
+    id
+    userId
+    messages {
+      items {
+        id
+        chatId
+        content
+        when
+      }
+      nextToken
+    }
+  }
+}
+subscription OnDeleteChat {
+  onDeleteChat {
+    id
+    userId
+    messages {
+      items {
+        id
+        chatId
+        content
+        when
+      }
+      nextToken
+    }
+  }
+}
+subscription OnCreateMessage {
+  onCreateMessage {
+    id
+    chatId
+    content
+    when
+  }
+}
+subscription OnUpdateMessage {
+  onUpdateMessage {
+    id
+    chatId
+    content
+    when
+  }
+}
+subscription OnDeleteMessage {
+  onDeleteMessage {
+    id
+    chatId
+    content
+    when
+  }
+}

@@ -7,14 +7,60 @@
 //
 
 import UIKit
+import AWSAppSync
+import AWSMobileClient
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+  var appSyncClient: AWSAppSyncClient?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    
+    do {
+          // You can choose the directory in which AppSync stores its persistent cache databases
+    let cacheConfiguration = try AWSAppSyncCacheConfiguration()
+
+          // Initialize the AWS AppSync configuration
+          let appSyncConfig = try AWSAppSyncClientConfiguration(appSyncServiceConfig: AWSAppSyncServiceConfig(),
+                                                                userPoolsAuthProvider: {
+                                                                  class MyCognitoUserPoolsAuthProvider : AWSCognitoUserPoolsAuthProviderAsync {
+                                                                      func getLatestAuthToken(_ callback: @escaping (String?, Error?) -> Void) {
+                                                                          AWSMobileClient.default().getTokens { (tokens, error) in
+                                                                              if error != nil {
+                                                                                  callback(nil, error)
+                                                                              } else {
+                                                                                  callback(tokens?.idToken?.tokenString, nil)
+                                                                              }
+                                                                          }
+                                                                      }
+                                                                  }
+                                                                  return MyCognitoUserPoolsAuthProvider()}(),
+                                                                cacheConfiguration: cacheConfiguration)
+          
+          // Initialize the AWS AppSync client
+          appSyncClient = try AWSAppSyncClient(appSyncConfig: appSyncConfig)
+      } catch {
+          print("Error initializing appsync client. \(error)")
+      }
+    
+    AWSMobileClient.default().initialize { (userState, error) in
+        if let userState = userState {
+            switch(userState){
+            case .signedIn:
+              print("Signed In")
+            case .signedOut:
+              print("Signed Out")
+            default:
+                AWSMobileClient.default().signOut()
+            }
+            
+        } else if let error = error {
+            print(error.localizedDescription)
+        }
+    }
+    
     return true
   }
 

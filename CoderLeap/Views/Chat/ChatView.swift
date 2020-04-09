@@ -10,10 +10,13 @@ import SwiftUI
 
 struct ChatView: View {
   @State var typingMessage: String = ""
-  @EnvironmentObject var chatHelper: ChatHelper
+  @ObservedObject var chatHelper: ChatHelper
   
   init() {
     UITableView.appearance().tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 1))
+    
+    self.chatHelper = ChatHelper()
+    self.chatHelper.createChatRoom()
   }
   
     var body: some View {

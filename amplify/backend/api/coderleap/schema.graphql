@@ -1,0 +1,12 @@
+type Chat @model {
+  id: ID!
+  userId: String!
+  messages: [Message] @connection(name: "ChatMessages", fields: ["id"])
+}
+
+type Message @model @key(name: "ChatMessages", fields: ["chatId", "when"]){
+  id: ID!
+  chatId: ID!
+  content: String!
+  when: String!
+}

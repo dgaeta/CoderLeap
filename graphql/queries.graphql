@@ -1,0 +1,55 @@
+# this is an auto generated file. This will be overwritten
+query GetChat($id: ID!) {
+  getChat(id: $id) {
+    id
+    userId
+    messages {
+      items {
+        id
+        chatId
+        content
+        when
+      }
+      nextToken
+    }
+  }
+}
+query ListChats(
+  $filter: ModelChatFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listChats(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      userId
+      messages {
+        nextToken
+      }
+    }
+    nextToken
+  }
+}
+query GetMessage($id: ID!) {
+  getMessage(id: $id) {
+    id
+    chatId
+    content
+    when
+  }
+}
+query ListMessages(
+  $filter: ModelMessageFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listMessages(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      chatId
+      content
+      when
+    }
+    nextToken
+  }
+}
