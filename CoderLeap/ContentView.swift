@@ -17,10 +17,13 @@ struct ContentView: View {
         Group {
           if self.usermanager.signedIn {
             App()
+          }
+          if self.usermanager.unconfirmed {
+            ConfirmSignupView()
           } else {
             WelcomeView()
             
-           RegisterView(keyboardHandler: KeyboardFollower())
+            RegisterView(keyboardHandler: KeyboardFollower())
           }
         }
       }

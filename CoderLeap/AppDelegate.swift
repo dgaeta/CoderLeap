@@ -23,21 +23,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let cacheConfiguration = try AWSAppSyncCacheConfiguration()
 
           // Initialize the AWS AppSync configuration
-          let appSyncConfig = try AWSAppSyncClientConfiguration(appSyncServiceConfig: AWSAppSyncServiceConfig(),
-                                                                userPoolsAuthProvider: {
-                                                                  class MyCognitoUserPoolsAuthProvider : AWSCognitoUserPoolsAuthProviderAsync {
-                                                                      func getLatestAuthToken(_ callback: @escaping (String?, Error?) -> Void) {
-                                                                          AWSMobileClient.default().getTokens { (tokens, error) in
-                                                                              if error != nil {
-                                                                                  callback(nil, error)
-                                                                              } else {
-                                                                                  callback(tokens?.idToken?.tokenString, nil)
-                                                                              }
-                                                                          }
-                                                                      }
-                                                                  }
-                                                                  return MyCognitoUserPoolsAuthProvider()}(),
-                                                                cacheConfiguration: cacheConfiguration)
+          let appSyncConfig = try AWSAppSyncClientConfiguration(
+            appSyncServiceConfig: AWSAppSyncServiceConfig(),
+            userPoolsAuthProvider: {
+              class MyCognitoUserPoolsAuthProvider : AWSCognitoUserPoolsAuthProviderAsync {
+                  func getLatestAuthToken(_ callback: @escaping (String?, Error?) -> Void) {
+                      AWSMobileClient.default().getTokens { (tokens, error) in
+                          if error != nil {
+                              callback(nil, error)
+                          } else {
+                              callback(tokens?.idToken?.tokenString, nil)
+                          }
+                      }
+                  }
+              }
+              return MyCognitoUserPoolsAuthProvider()}(),
+            cacheConfiguration: cacheConfiguration
+          )
           
           // Initialize the AWS AppSync client
           appSyncClient = try AWSAppSyncClient(appSyncConfig: appSyncConfig)

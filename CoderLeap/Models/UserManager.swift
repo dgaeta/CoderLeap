@@ -14,6 +14,7 @@ import AWSMobileClient
 final class UserManager: ObservableObject {
   @Published var profile: Profile
   @Published var signedIn: Bool
+  @Published var unconfirmed: Bool
   
   var isRegistered: Bool {
     return profile.username.isEmpty == true
@@ -22,11 +23,13 @@ final class UserManager: ObservableObject {
   init() {
     profile = Profile(username: "")
     self.signedIn = false
+    self.unconfirmed = false
   }
   
   init(username: String) {
     self.profile = Profile(username: username)
     self.signedIn = false
+    self.unconfirmed = false
   }
   
   func persistProfile() {
@@ -40,6 +43,29 @@ final class UserManager: ObservableObject {
     self.signedIn = false
   }
   
+  func confirmSignUp(signUpCodeText: String) {
+    AWSMobileClient.default().confirmSignUp(username: self.profile.username, confirmationCode: signUpCodeText) { (signUpResult, error) in
+        if let signUpResult = signUpResult {
+            switch(signUpResult.signUpConfirmationState) {
+            case .confirmed:
+                print("User is signed up and confirmed.")
+              DispatchQueue.main.async {
+                self.signedIn = true
+                self.unconfirmed = false
+              }
+            case .unconfirmed:
+                print("User is not confirmed and needs verification via \(signUpResult.codeDeliveryDetails!.deliveryMedium) sent at \(signUpResult.codeDeliveryDetails!.destination!)")
+                
+            case .unknown:
+                print("Unexpected case")
+            }
+        } else if let error = error {
+            print("\(error.localizedDescription)")
+        }
+    }
+
+  }
+  
   func signUp(username: String, password: String) {
     AWSMobileClient.default().signUp(username: username, password: password
     ) { (signUpResult, error) in
@@ -47,19 +73,24 @@ final class UserManager: ObservableObject {
             switch(signUpResult.signUpConfirmationState) {
             case .confirmed:
                 print("User is signed up and confirmed.")
+              
+              DispatchQueue.main.async {
+                self.profile.username = username
+                self.persistProfile()
+                self.signedIn = true
+              }
             case .unconfirmed:
-                
+                DispatchQueue.main.async {
+                  self.profile.username = username
+                  self.unconfirmed = true
+                }
                 print("User is not confirmed and no verification is set up at the moment:  \(signUpResult).")
                 
             case .unknown:
                 print("Unexpected case")
             }
           
-          self.profile.username = username
-          self.persistProfile()
-          DispatchQueue.main.async {
-            self.signedIn = true
-          }
+          
         } else if let error = error {
           print("ERROR ON SIGNUP")
             if let error = error as? AWSMobileClientError {
