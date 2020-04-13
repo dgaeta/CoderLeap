@@ -9,24 +9,27 @@
 import Foundation
 
 struct Profile : Codable {
-  var username: String
+  var email: String
   var firstName: String
   var lastName: String
   var prefersNotifications: Bool
+  var supportChatId: String
   
-  static let `default` = Self(username: "username", prefersNotifications: true)
+  static let `default` = Self(email: "username", prefersNotifications: true)
   
   init() {
-    self.username = ""
+    self.email = ""
     self.firstName = ""
     self.lastName = ""
     self.prefersNotifications = true
+    self.supportChatId = ""
   }
   
-  init(username: String, prefersNotifications: Bool = true) {
-    self.username = username
+  init(email: String, prefersNotifications: Bool = true) {
+    self.email = email
     self.firstName = ""
     self.lastName = ""
     self.prefersNotifications = prefersNotifications
+    self.supportChatId = ""
   }
 }

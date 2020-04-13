@@ -47,22 +47,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
           print("Error initializing appsync client. \(error)")
       }
     
-    AWSMobileClient.default().initialize { (userState, error) in
-        if let userState = userState {
-            switch(userState){
-            case .signedIn:
-              print("Signed In")
-            case .signedOut:
-              print("Signed Out")
-            default:
-                AWSMobileClient.default().signOut()
-            }
-            
-        } else if let error = error {
-            print(error.localizedDescription)
-        }
-    }
-    
     return true
   }
 

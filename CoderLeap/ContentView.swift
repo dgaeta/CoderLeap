@@ -17,8 +17,9 @@ struct ContentView: View {
         Group {
           if self.usermanager.signedIn {
             App()
+              .environmentObject(self.usermanager)
           }
-          if self.usermanager.unconfirmed {
+          else if self.usermanager.unconfirmed {
             ConfirmSignupView()
           } else {
             WelcomeView()

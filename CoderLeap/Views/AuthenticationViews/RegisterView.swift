@@ -12,7 +12,7 @@ struct RegisterView: View {
   @EnvironmentObject var userManager: UserManager
   @ObservedObject var keyboardHandler: KeyboardFollower
   
-  @State var username: String = ""
+  @State var email: String = ""
   @State var password: String = ""
   
   init(keyboardHandler: KeyboardFollower) {
@@ -21,7 +21,7 @@ struct RegisterView: View {
   
   var body: some View {
     VStack {
-      TextField("Type your username...", text: self.$username)
+      TextField("Type your username...", text: self.$email)
         .foregroundColor(.black)
         .bordered()
       
@@ -62,18 +62,18 @@ struct RegisterView: View {
 extension RegisterView {
 
   func registerUser() {
-    userManager.signUp(username: username,
+    userManager.signUp(email: email,
                        password: password)
   }
   
   func loginUser() {
-    userManager.login(username: username,
+    userManager.login(email: email,
                        password: password)
   }
 }
 
 struct RegisterView_Previews: PreviewProvider {
-  static let userManager = UserManager(username: "DanTestX")
+  static let userManager = UserManager(email: "DanTestX")
   
     static var previews: some View {
         RegisterView(keyboardHandler: KeyboardFollower())

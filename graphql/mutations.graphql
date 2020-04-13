@@ -1,11 +1,59 @@
 # this is an auto generated file. This will be overwritten
+mutation CreateUser(
+  $input: CreateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  createUser(input: $input, condition: $condition) {
+    email
+    supportChatId
+    chat {
+      id
+      userEmail
+      messages {
+        nextToken
+      }
+    }
+  }
+}
+mutation UpdateUser(
+  $input: UpdateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  updateUser(input: $input, condition: $condition) {
+    email
+    supportChatId
+    chat {
+      id
+      userEmail
+      messages {
+        nextToken
+      }
+    }
+  }
+}
+mutation DeleteUser(
+  $input: DeleteUserInput!
+  $condition: ModelUserConditionInput
+) {
+  deleteUser(input: $input, condition: $condition) {
+    email
+    supportChatId
+    chat {
+      id
+      userEmail
+      messages {
+        nextToken
+      }
+    }
+  }
+}
 mutation CreateChat(
   $input: CreateChatInput!
   $condition: ModelChatConditionInput
 ) {
   createChat(input: $input, condition: $condition) {
     id
-    userId
+    userEmail
     messages {
       items {
         id
@@ -23,7 +71,7 @@ mutation UpdateChat(
 ) {
   updateChat(input: $input, condition: $condition) {
     id
-    userId
+    userEmail
     messages {
       items {
         id
@@ -41,7 +89,7 @@ mutation DeleteChat(
 ) {
   deleteChat(input: $input, condition: $condition) {
     id
-    userId
+    userEmail
     messages {
       items {
         id

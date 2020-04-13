@@ -1,6 +1,6 @@
 {
 	"auth": {
-		"coderleapa64cdddd": {
+		"coderleapc8936d6a": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
 			"dependsOn": []
@@ -16,7 +16,7 @@
 					"defaultAuthentication": {
 						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
 						"userPoolConfig": {
-							"userPoolId": "authcoderleapa64cdddd"
+							"userPoolId": "authcoderleapc8936d6a"
 						}
 					}
 				}

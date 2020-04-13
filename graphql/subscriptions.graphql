@@ -1,8 +1,47 @@
 # this is an auto generated file. This will be overwritten
+subscription OnCreateUser {
+  onCreateUser {
+    email
+    supportChatId
+    chat {
+      id
+      userEmail
+      messages {
+        nextToken
+      }
+    }
+  }
+}
+subscription OnUpdateUser {
+  onUpdateUser {
+    email
+    supportChatId
+    chat {
+      id
+      userEmail
+      messages {
+        nextToken
+      }
+    }
+  }
+}
+subscription OnDeleteUser {
+  onDeleteUser {
+    email
+    supportChatId
+    chat {
+      id
+      userEmail
+      messages {
+        nextToken
+      }
+    }
+  }
+}
 subscription OnCreateChat {
   onCreateChat {
     id
-    userId
+    userEmail
     messages {
       items {
         id
@@ -17,7 +56,7 @@ subscription OnCreateChat {
 subscription OnUpdateChat {
   onUpdateChat {
     id
-    userId
+    userEmail
     messages {
       items {
         id
@@ -32,7 +71,7 @@ subscription OnUpdateChat {
 subscription OnDeleteChat {
   onDeleteChat {
     id
-    userId
+    userEmail
     messages {
       items {
         id

@@ -31,15 +31,36 @@ class ChatHelper : ObservableObject {
     appSyncClient = appDelegate.appSyncClient
     df.dateFormat = "yyyy-MM-dd hh:mm:ss"
   }
+  
+  func getMessages(email: String!) {
+    let emailLowercased = email.lowercased()
     
-  func sendMessage(_ chatMessage: Message) {
+    appSyncClient?.fetch(query: GetUserQuery(email: emailLowercased)) { (result, error) in
+        if let error = error as? AWSAppSyncClientError {
+            print("Error occurred: \(error.localizedDescription )")
+        }
+        if let resultError = result?.errors {
+            print("Error saving the item on server: \(resultError)")
+            return
+        }
+      
+        let supportChatId = result!.data?.getUser!.supportChatId
+      let messages = result!.data?.getUser!.chat!.messages!
+        print(messages)
+//        DispatchQueue.main.async {
+//          self.realTimeMessages = messages!
+//        }
+    }
+  }
+    
+  func sendMessage(_ chatMessage: Message, chatId: GraphQLID) {
       realTimeMessages.append(chatMessage)
       didChange.send(())
     
 //    let mutationInput = Create(id: idCombo, userId: username, date: self.todaysDateIsoFormat!, ozDrank: 0)
     
     let now = df.string(from: Date())
-    let createInput = CreateMessageInput(chatId: "testID", content: "Wassupp", when: now)
+    let createInput = CreateMessageInput(chatId: chatId, content: chatMessage.content, when: now)
     
     appSyncClient?.perform(mutation: CreateMessageMutation(input: createInput)) { (result, error) in
         if let error = error as? AWSAppSyncClientError {
@@ -60,7 +81,7 @@ class ChatHelper : ObservableObject {
   }
   
   func createChatRoom() {
-    let createInput = CreateChatInput(userId: "gaeta.d@gmail.com")
+    let createInput = CreateChatInput(userEmail: "gaeta.d@gmail.com")
     
     appSyncClient?.perform(mutation: CreateChatMutation(input: createInput)) { (result, error) in
         if let error = error as? AWSAppSyncClientError {

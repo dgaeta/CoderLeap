@@ -1,19 +1,19 @@
 {
     "beta": {
         "awscloudformation": {
-            "AuthRoleName": "amplify-coderleap-beta-130734-authRole",
-            "UnauthRoleArn": "arn:aws:iam::693165421151:role/amplify-coderleap-beta-130734-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::693165421151:role/amplify-coderleap-beta-130734-authRole",
+            "AuthRoleName": "amplify-coderleap-beta-01746-authRole",
+            "UnauthRoleArn": "arn:aws:iam::693165421151:role/amplify-coderleap-beta-01746-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::693165421151:role/amplify-coderleap-beta-01746-authRole",
             "Region": "us-east-2",
-            "DeploymentBucketName": "amplify-coderleap-beta-130734-deployment",
-            "UnauthRoleName": "amplify-coderleap-beta-130734-unauthRole",
-            "StackName": "amplify-coderleap-beta-130734",
-            "StackId": "arn:aws:cloudformation:us-east-2:693165421151:stack/amplify-coderleap-beta-130734/ff90e070-75d5-11ea-ba69-0a0a04c5437c",
-            "AmplifyAppId": "d1gdlfykokjxd1"
+            "DeploymentBucketName": "amplify-coderleap-beta-01746-deployment",
+            "UnauthRoleName": "amplify-coderleap-beta-01746-unauthRole",
+            "StackName": "amplify-coderleap-beta-01746",
+            "StackId": "arn:aws:cloudformation:us-east-2:693165421151:stack/amplify-coderleap-beta-01746/1e8bc2c0-7d46-11ea-86bd-062398501aa6",
+            "AmplifyAppId": "dvjtcjr4wief5"
         },
         "categories": {
             "auth": {
-                "coderleapa64cdddd": {}
+                "coderleapc8936d6a": {}
             }
         }
     }

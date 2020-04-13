@@ -1,10 +1,16 @@
-type Chat @model {
-  id: ID!
-  userId: String!
-  messages: [Message] @connection(name: "ChatMessages", fields: ["id"])
+type User @model @key(fields: ["email"]){
+	email: String!
+  supportChatId: ID!
+  chat: Chat @connection(fields: ["supportChatId"])
 }
 
-type Message @model @key(name: "ChatMessages", fields: ["chatId", "when"]){
+type Chat @model {
+  id: ID!
+  userEmail: String!
+  messages: [Message] @connection(name: "byMessage", fields: ["id"])
+}
+
+type Message @model @key(name: "byMessage", fields: ["chatId", "content"]){
   id: ID!
   chatId: ID!
   content: String!

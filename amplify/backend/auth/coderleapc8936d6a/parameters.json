@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "coderleapa64cdddd_identitypool_a64cdddd",
+    "identityPoolName": "coderleapc8936d6a_identitypool_c8936d6a",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "coderla64cdddd",
-    "userPoolName": "coderleapa64cdddd_userpool_a64cdddd",
+    "resourceNameTruncated": "coderlc8936d6a",
+    "userPoolName": "coderleapc8936d6a_userpool_c8936d6a",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,9 +28,9 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "coderla64cdddd_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "coderlc8936d6a_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "resourceName": "coderleapa64cdddd",
+    "resourceName": "coderleapc8936d6a",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -46,7 +46,7 @@
     },
     "useDefault": "default",
     "usernameAttributes": [
-        "email, phone_number"
+        "email"
     ],
     "userPoolGroupList": [],
     "dependsOn": []

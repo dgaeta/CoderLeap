@@ -11,12 +11,15 @@ import SwiftUI
 struct ChatView: View {
   @State var typingMessage: String = ""
   @ObservedObject var chatHelper: ChatHelper
+  var email: String
+  var chatId: String
   
-  init() {
+  init(email: String, chatId: String) {
     UITableView.appearance().tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 1))
-    
+    self.email = email
+    self.chatId = chatId
     self.chatHelper = ChatHelper()
-    self.chatHelper.createChatRoom()
+    self.chatHelper.getMessages(email: self.email)
   }
   
     var body: some View {
@@ -42,13 +45,16 @@ struct ChatView: View {
     }
   
   func sendMessage() {
-    chatHelper.sendMessage(Message(content: typingMessage, userId: ""))
+    chatHelper.sendMessage(
+      Message(content: typingMessage, userId: self.email),
+      chatId: self.chatId)
     typingMessage = ""
   }
 }
 
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
-      ChatView().environmentObject(ChatHelper())
+      ChatView(email: "gaeta.d@gmail.com", chatId: "xxxxxx")
+        .environmentObject(ChatHelper())
     }
 }

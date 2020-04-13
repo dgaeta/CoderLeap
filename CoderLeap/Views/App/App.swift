@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct App: View {
+  @EnvironmentObject var userManager: UserManager
+  
     var body: some View {
       NavigationView {
         
@@ -19,21 +21,25 @@ struct App: View {
                     Text("Puzzles")
                 }
 
-            ChatView()
+          ChatView(email: userManager.profile.email, chatId: userManager.profile.supportChatId)
                 .tabItem {
                     Image(systemName: "square.and.pencil")
                     Text("Chat")
                 }
+              .environmentObject(self.userManager)
         }
         .navigationBarTitle(Text("CoderLeap"), displayMode: .inline)
-      
-        
+        .navigationBarItems(leading:
+          Button("Sign out") {
+            self.userManager.signOut()
+          })
       }
     }
 }
 
 struct App_Previews: PreviewProvider {
     static var previews: some View {
-        App()
+      App()
+      .environmentObject(UserManager())
     }
 }
