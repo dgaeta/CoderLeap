@@ -26,7 +26,7 @@ struct MessageView: View {
 
 struct MessageView_Previews: PreviewProvider {
     static var previews: some View {
-        MessageView(currentMessage: Message(content: "So, I think the best thing to do is focus on the fundamentals and then move on to specialized content", userId: ""))
+      MessageView(currentMessage: Message(content: "So, I think the best thing to do is focus on the fundamentals and then move on to specialized content", when: "2020-04-14", id: "dfasdfsd--dfsd-dfsd"))
       .environmentObject(UserManager())
     }
 }

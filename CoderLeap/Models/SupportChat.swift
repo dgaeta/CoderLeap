@@ -7,17 +7,13 @@
 //
 
 import Foundation
-
-struct MessageModel: Identifiable {
-  var id: ID
-  var content: String
-  var when: String
-}
+import AWSCore
+import AWSAppSync
 
 struct SupportChat: Identifiable {
   var id: ID
   var userId: String
-  var Messages: [MessageModel]
+  var Messages: [Message]
 }
 
 

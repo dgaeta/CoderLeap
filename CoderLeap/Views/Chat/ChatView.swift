@@ -19,7 +19,7 @@ struct ChatView: View {
     self.email = email
     self.chatId = chatId
     self.chatHelper = ChatHelper()
-    self.chatHelper.getMessages(email: self.email)
+    self.chatHelper.getMessages(chatId: self.chatId)
   }
   
     var body: some View {
@@ -45,9 +45,7 @@ struct ChatView: View {
     }
   
   func sendMessage() {
-    chatHelper.sendMessage(
-      Message(content: typingMessage, userId: self.email),
-      chatId: self.chatId)
+    chatHelper.sendMessage(typingMessage, chatId: self.chatId)
     typingMessage = ""
   }
 }

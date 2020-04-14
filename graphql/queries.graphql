@@ -7,6 +7,12 @@ query GetUser($email: String!) {
       id
       userEmail
       messages {
+        items {
+          id
+          chatId
+          content
+          when
+        }
         nextToken
       }
     }
@@ -32,6 +38,15 @@ query ListUsers(
       chat {
         id
         userEmail
+        messages {
+          items {
+            id
+            chatId
+            content
+            when
+          }
+          nextToken
+        }
       }
     }
     nextToken
@@ -62,6 +77,12 @@ query ListChats(
       id
       userEmail
       messages {
+        items {
+          id
+          chatId
+          content
+          when
+        }
         nextToken
       }
     }

@@ -13,7 +13,8 @@ import AWSMobileClient
 
 struct Message: Hashable {
     var content: String
-    var userId: String
+    var when: String
+    var id: GraphQLID
 }
 
 class ChatHelper : ObservableObject {
@@ -32,10 +33,9 @@ class ChatHelper : ObservableObject {
     df.dateFormat = "yyyy-MM-dd hh:mm:ss"
   }
   
-  func getMessages(email: String!) {
-    let emailLowercased = email.lowercased()
+  func getMessages(chatId: String!) {
     
-    appSyncClient?.fetch(query: GetUserQuery(email: emailLowercased)) { (result, error) in
+    appSyncClient?.fetch(query: GetChatQuery(id: chatId)) { (result, error) in
         if let error = error as? AWSAppSyncClientError {
             print("Error occurred: \(error.localizedDescription )")
         }
@@ -44,32 +44,46 @@ class ChatHelper : ObservableObject {
             return
         }
       
-        let supportChatId = result!.data?.getUser!.supportChatId
-      let messages = result!.data?.getUser!.chat!.messages!
-        print(messages)
-//        DispatchQueue.main.async {
-//          self.realTimeMessages = messages!
-//        }
+        print(result!.data?.getChat!.userEmail)
+        let messagesCount = result!.data?.getChat!.messages?.items?.count
+        print(messagesCount)
+      
+        guard let messages = result!.data?.getChat!.messages?.items else {
+          print("Messages nil fetching event")
+          return
+        }
+      
+        messages.forEach {
+          print($0)
+          self.realTimeMessages.append(
+            Message(content: $0!.content, when: $0!.when, id: $0!.id)
+          )
+      }
     }
   }
     
-  func sendMessage(_ chatMessage: Message, chatId: GraphQLID) {
-      realTimeMessages.append(chatMessage)
-      didChange.send(())
+  func sendMessage(_ content: String, chatId: GraphQLID) {
+      
     
 //    let mutationInput = Create(id: idCombo, userId: username, date: self.todaysDateIsoFormat!, ozDrank: 0)
     
     let now = df.string(from: Date())
-    let createInput = CreateMessageInput(chatId: chatId, content: chatMessage.content, when: now)
+    let createInput = CreateMessageInput(chatId: chatId, content: content, when: now)
+    
     
     appSyncClient?.perform(mutation: CreateMessageMutation(input: createInput)) { (result, error) in
         if let error = error as? AWSAppSyncClientError {
-            print("Error occurred: \(error.localizedDescription )")
+          print("Error occurred: \(error.localizedDescription )")
+          return
         }
         if let resultError = result?.errors {
-            print("Error saving the item on server: \(resultError)")
-            return
+          print("Error saving the item on server: \(resultError)")
+          return
         }
+        
+      let newMessage = Message(content: content, when: now, id: (result?.data?.createMessage!.id)!)
+        self.realTimeMessages.append(newMessage)
+        self.didChange.send(())
       
         print("CreateChat call successful.")
         print(result!)
@@ -94,6 +108,4 @@ class ChatHelper : ObservableObject {
         print("CreateChat call finished.")
     }
   }
-  
-  
 }

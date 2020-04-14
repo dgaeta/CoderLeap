@@ -304,7 +304,6 @@ final class UserManager: ObservableObject {
       if let profile = try? PropertyListDecoder().decode(Profile.self, from: data) {
         self.profile = profile
         self.signedIn = true
-        print(profile)
       }
     }
   }

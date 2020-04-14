@@ -7,6 +7,12 @@ subscription OnCreateUser {
       id
       userEmail
       messages {
+        items {
+          id
+          chatId
+          content
+          when
+        }
         nextToken
       }
     }
@@ -20,6 +26,12 @@ subscription OnUpdateUser {
       id
       userEmail
       messages {
+        items {
+          id
+          chatId
+          content
+          when
+        }
         nextToken
       }
     }
@@ -33,6 +45,12 @@ subscription OnDeleteUser {
       id
       userEmail
       messages {
+        items {
+          id
+          chatId
+          content
+          when
+        }
         nextToken
       }
     }

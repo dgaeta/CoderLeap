@@ -7,7 +7,7 @@ type User @model @key(fields: ["email"]){
 type Chat @model {
   id: ID!
   userEmail: String!
-  messages: [Message] @connection(name: "byMessage", fields: ["id"])
+  messages: [Message] @connection(keyName: "byMessage", fields: ["id"])
 }
 
 type Message @model @key(name: "byMessage", fields: ["chatId", "content"]){

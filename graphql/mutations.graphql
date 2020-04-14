@@ -10,6 +10,12 @@ mutation CreateUser(
       id
       userEmail
       messages {
+        items {
+          id
+          chatId
+          content
+          when
+        }
         nextToken
       }
     }
@@ -26,6 +32,12 @@ mutation UpdateUser(
       id
       userEmail
       messages {
+        items {
+          id
+          chatId
+          content
+          when
+        }
         nextToken
       }
     }
@@ -42,6 +54,12 @@ mutation DeleteUser(
       id
       userEmail
       messages {
+        items {
+          id
+          chatId
+          content
+          when
+        }
         nextToken
       }
     }
