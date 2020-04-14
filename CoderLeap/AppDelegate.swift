@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Override point for customization after application launch.
     
     do {
-          // You can choose the directory in which AppSync stores its persistent cache databases
-    let cacheConfiguration = try AWSAppSyncCacheConfiguration()
+      // You can choose the directory in which AppSync stores its persistent cache databases
+      let cacheConfiguration = try AWSAppSyncCacheConfiguration()
 
           // Initialize the AWS AppSync configuration
           let appSyncConfig = try AWSAppSyncClientConfiguration(

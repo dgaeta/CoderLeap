@@ -35,7 +35,7 @@ class ChatHelper : ObservableObject {
   
   func getMessages(chatId: String!) {
     
-    appSyncClient?.fetch(query: GetChatQuery(id: chatId)) { (result, error) in
+    appSyncClient?.fetch(query: GetChatQuery(id: chatId), cachePolicy: .fetchIgnoringCacheData) { (result, error) in
         if let error = error as? AWSAppSyncClientError {
             print("Error occurred: \(error.localizedDescription )")
         }
@@ -45,6 +45,7 @@ class ChatHelper : ObservableObject {
         }
       
         print(result!.data?.getChat!.userEmail)
+        print(chatId)
         let messagesCount = result!.data?.getChat!.messages?.items?.count
         print(messagesCount)
       
@@ -54,7 +55,6 @@ class ChatHelper : ObservableObject {
         }
       
         messages.forEach {
-          print($0)
           self.realTimeMessages.append(
             Message(content: $0!.content, when: $0!.when, id: $0!.id)
           )
