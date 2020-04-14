@@ -15,6 +15,7 @@ mutation CreateUser(
           chatId
           content
           when
+          userEmail
         }
         nextToken
       }
@@ -37,6 +38,7 @@ mutation UpdateUser(
           chatId
           content
           when
+          userEmail
         }
         nextToken
       }
@@ -59,6 +61,7 @@ mutation DeleteUser(
           chatId
           content
           when
+          userEmail
         }
         nextToken
       }
@@ -78,6 +81,7 @@ mutation CreateChat(
         chatId
         content
         when
+        userEmail
       }
       nextToken
     }
@@ -96,6 +100,7 @@ mutation UpdateChat(
         chatId
         content
         when
+        userEmail
       }
       nextToken
     }
@@ -114,6 +119,7 @@ mutation DeleteChat(
         chatId
         content
         when
+        userEmail
       }
       nextToken
     }
@@ -128,6 +134,7 @@ mutation CreateMessage(
     chatId
     content
     when
+    userEmail
   }
 }
 mutation UpdateMessage(
@@ -139,6 +146,7 @@ mutation UpdateMessage(
     chatId
     content
     when
+    userEmail
   }
 }
 mutation DeleteMessage(
@@ -150,5 +158,6 @@ mutation DeleteMessage(
     chatId
     content
     when
+    userEmail
   }
 }

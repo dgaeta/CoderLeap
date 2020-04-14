@@ -26,26 +26,26 @@ struct ChatView: View {
       NavigationView {
         VStack {
            List {
-               ForEach(chatHelper.realTimeMessages, id: \.self) { msg in
-                MessageView(currentMessage: msg)
-                }
+            ForEach(chatHelper.realTimeMessages, id: \.self) { msg in
+              MessageView(currentMessage: msg)
+            }
           }
            HStack {
-               TextField("Message...", text: $typingMessage)
-                  .textFieldStyle(RoundedBorderTextFieldStyle())
-                  .frame(minHeight: CGFloat(30))
-            Button(action: self.sendMessage) {
-                    Text("Send")
-                 }
-            }.frame(minHeight: CGFloat(50)).padding()
+             TextField("Message...", text: $typingMessage)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .frame(minHeight: CGFloat(30))
+          Button(action: self.sendMessage) {
+              Text("Send")
+            }
+          }.frame(minHeight: CGFloat(50)).padding()
         }
-        .navigationBarTitle(Text("CoderLeap Mentor - Dan G."), displayMode: .inline)
+        .navigationBarTitle(Text("CoderLeap Mentor - Dan Gaeta"), displayMode: .inline)
       }
         
     }
   
   func sendMessage() {
-    chatHelper.sendMessage(typingMessage, chatId: self.chatId)
+    chatHelper.sendMessage(typingMessage, chatId: self.chatId, senderEmail: self.email)
     typingMessage = ""
   }
 }

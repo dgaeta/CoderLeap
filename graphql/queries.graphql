@@ -12,6 +12,7 @@ query GetUser($email: String!) {
           chatId
           content
           when
+          userEmail
         }
         nextToken
       }
@@ -44,6 +45,7 @@ query ListUsers(
             chatId
             content
             when
+            userEmail
           }
           nextToken
         }
@@ -62,6 +64,7 @@ query GetChat($id: ID!) {
         chatId
         content
         when
+        userEmail
       }
       nextToken
     }
@@ -82,6 +85,7 @@ query ListChats(
           chatId
           content
           when
+          userEmail
         }
         nextToken
       }
@@ -95,6 +99,7 @@ query GetMessage($id: ID!) {
     chatId
     content
     when
+    userEmail
   }
 }
 query ListMessages(
@@ -108,6 +113,7 @@ query ListMessages(
       chatId
       content
       when
+      userEmail
     }
     nextToken
   }

@@ -14,10 +14,20 @@ struct MessageView: View {
   
     var body: some View {
       HStack(alignment: .bottom, spacing: 15) {
-           Image("my-avatar")
-                     .resizable()
-                     .frame(width: 40, height: 40, alignment: .center)
-                     .cornerRadius(20)
+        Group {
+          if currentMessage.senderEmail.isEmpty {
+            Image("CoderFrog")
+            .resizable()
+            .frame(width: 40, height: 40, alignment: .center)
+            .cornerRadius(20)
+          } else {
+            Image("my-avatar")
+            .resizable()
+            .frame(width: 40, height: 40, alignment: .center)
+            .cornerRadius(20)
+          }
+        }
+           
         ContentMessageView(contentMessage: currentMessage.content,
                               isCurrentUser: false)
         }
@@ -26,7 +36,7 @@ struct MessageView: View {
 
 struct MessageView_Previews: PreviewProvider {
     static var previews: some View {
-      MessageView(currentMessage: Message(content: "So, I think the best thing to do is focus on the fundamentals and then move on to specialized content", when: "2020-04-14", id: "dfasdfsd--dfsd-dfsd"))
+      MessageView(currentMessage: Message(content: "So, I think the best thing to do is focus on the fundamentals and then move on to specialized content", when: "2020-04-14", id: "dfasdfsd--dfsd-dfsd", senderEmail: "gaeta.d@gmail.com"))
       .environmentObject(UserManager())
     }
 }

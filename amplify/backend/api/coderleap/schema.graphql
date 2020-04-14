@@ -12,7 +12,8 @@ type Chat @model {
 
 type Message @model @key(name: "byMessage", fields: ["chatId", "content"]){
   id: ID!
-  chatId: ID!
+  chatId: ID! 
   content: String!
   when: String!
+  userEmail: String
 }

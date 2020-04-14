@@ -15,6 +15,7 @@ struct Message: Hashable {
   var content: String
   var when: String
   var id: GraphQLID
+  var senderEmail: String
 }
 
 class ChatHelper : ObservableObject {
@@ -50,15 +51,15 @@ class ChatHelper : ObservableObject {
     
       messages.forEach {
         self.realTimeMessages.append(
-          Message(content: $0!.content, when: $0!.when, id: $0!.id)
+          Message(content: $0!.content, when: $0!.when, id: $0!.id, senderEmail: $0?.userEmail ?? "")
         )
       }
     }
   }
-    
-  func sendMessage(_ content: String, chatId: GraphQLID) {
+
+  func sendMessage(_ content: String, chatId: GraphQLID, senderEmail: String) {
     let now = df.string(from: Date())
-    let createInput = CreateMessageInput(chatId: chatId, content: content, when: now)
+    let createInput = CreateMessageInput(chatId: chatId, content: content, when: now, userEmail: senderEmail)
     
     appSyncClient?.perform(mutation: CreateMessageMutation(input: createInput)) { (result, error) in
       if let error = error as? AWSAppSyncClientError {
@@ -70,7 +71,7 @@ class ChatHelper : ObservableObject {
         return
       }
         
-      let newMessage = Message(content: content, when: now, id: (result?.data?.createMessage!.id)!)
+      let newMessage = Message(content: content, when: now, id: (result?.data?.createMessage!.id)!, senderEmail: senderEmail)
       self.realTimeMessages.append(newMessage)
       self.didChange.send(())
     }
