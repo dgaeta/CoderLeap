@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct MessageView: View {
-  @EnvironmentObject var userManager: UserManager
   var currentMessage: Message
   
     var body: some View {
@@ -30,13 +29,12 @@ struct MessageView: View {
            
         ContentMessageView(contentMessage: currentMessage.content,
                               isCurrentUser: false)
-        }
+      }
     }
 }
 
 struct MessageView_Previews: PreviewProvider {
     static var previews: some View {
       MessageView(currentMessage: Message(content: "So, I think the best thing to do is focus on the fundamentals and then move on to specialized content", when: "2020-04-14", id: "dfasdfsd--dfsd-dfsd", senderEmail: "gaeta.d@gmail.com"))
-      .environmentObject(UserManager())
     }
 }
