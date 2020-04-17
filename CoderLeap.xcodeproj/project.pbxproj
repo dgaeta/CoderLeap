@@ -23,6 +23,7 @@
 		82257CF3243FA9CB0093A2DB /* ConfirmSignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82257CF2243FA9CB0093A2DB /* ConfirmSignupView.swift */; };
 		82328FD9244763CE001002CD /* DragablePieceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82328FD8244763CE001002CD /* DragablePieceView.swift */; };
 		82328FDB244764CF001002CD /* CodeDropAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82328FDA244764CF001002CD /* CodeDropAreaView.swift */; };
+		8247F076244A3CF90076C726 /* Silom.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8247F075244A3CF90076C726 /* Silom.ttf */; };
 		82CA79AF2437848700FC7702 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA79AE2437848700FC7702 /* WelcomeView.swift */; };
 		82CA79B1243784B900FC7702 /* LogoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA79B0243784B900FC7702 /* LogoImageView.swift */; };
 		82CA79B32437924F00FC7702 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA79B22437924F00FC7702 /* AuthenticationView.swift */; };
@@ -81,6 +82,7 @@
 		82257CF2243FA9CB0093A2DB /* ConfirmSignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmSignupView.swift; sourceTree = "<group>"; };
 		82328FD8244763CE001002CD /* DragablePieceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragablePieceView.swift; sourceTree = "<group>"; };
 		82328FDA244764CF001002CD /* CodeDropAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDropAreaView.swift; sourceTree = "<group>"; };
+		8247F075244A3CF90076C726 /* Silom.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Silom.ttf; sourceTree = "<group>"; };
 		82CA79AE2437848700FC7702 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		82CA79B0243784B900FC7702 /* LogoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoImageView.swift; sourceTree = "<group>"; };
 		82CA79B22437924F00FC7702 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				82CA79AB24377E7600FC7702 /* Models */,
 				821B0BDC24377C78008BB870 /* Views */,
 				82CA79AC24377E7C00FC7702 /* Util */,
+				8247F069244A35700076C726 /* Fonts */,
 				821B0BB224376F20008BB870 /* Assets.xcassets */,
 				821B0BB724376F20008BB870 /* LaunchScreen.storyboard */,
 				821B0BBA24376F20008BB870 /* Info.plist */,
@@ -221,6 +224,14 @@
 				82CA79AD2437846400FC7702 /* AuthenticationViews */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8247F069244A35700076C726 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8247F075244A3CF90076C726 /* Silom.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		82CA79AB24377E7600FC7702 /* Models */ = {
@@ -414,6 +425,7 @@
 			files = (
 				821B0BB924376F20008BB870 /* LaunchScreen.storyboard in Resources */,
 				821B0BB624376F20008BB870 /* Preview Assets.xcassets in Resources */,
+				8247F076244A3CF90076C726 /* Silom.ttf in Resources */,
 				82CA79C22437B3EA00FC7702 /* awsconfiguration.json in Resources */,
 				82CA79C12437B3EA00FC7702 /* amplifyconfiguration.json in Resources */,
 				821B0BB324376F20008BB870 /* Assets.xcassets in Resources */,

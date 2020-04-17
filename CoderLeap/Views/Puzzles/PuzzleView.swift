@@ -22,7 +22,7 @@ struct PuzzleView: View {
       VStack(alignment: .leading) {
         Text("Problem Statement")
           
-          .font(.custom("Silom", size: 25))
+          .font(.custom("Silom", size: 40))
           .multilineTextAlignment(.leading)
           .padding([.bottom])
           .frame(width: 350)
