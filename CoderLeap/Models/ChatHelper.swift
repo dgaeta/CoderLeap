@@ -43,17 +43,16 @@ class ChatHelper : ObservableObject {
           print("Error saving the item on server: \(resultError)")
           return
       }
+//      guard let messages = result!.data?.getChat!.messages?.items else {
+//        print("Messages fetch returned nil")
+//        return
+//      }
     
-      guard let messages = result!.data?.getChat!.messages?.items else {
-        print("Messages fetch returned nil")
-        return
-      }
-    
-      messages.forEach {
-        self.realTimeMessages.append(
-          Message(content: $0!.content, when: $0!.when, id: $0!.id, senderEmail: $0?.userEmail ?? "")
-        )
-      }
+//      messages.forEach {
+//        self.realTimeMessages.append(
+//          Message(content: $0!.content, when: $0!.when, id: $0!.id, senderEmail: $0?.userEmail ?? "")
+//        )
+//      }
     }
   }
 

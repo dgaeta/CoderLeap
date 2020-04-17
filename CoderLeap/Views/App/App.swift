@@ -15,11 +15,11 @@ struct App: View {
       NavigationView {
         
         TabView {
-            DragAndDropTest()
+            PuzzleView()
                 .tabItem {
                     Image(systemName: "gamecontroller")
                     Text("Puzzles")
-                }
+            }.background(Color.gray)
 
           ChatView(email: userManager.profile.email, chatId: userManager.profile.supportChatId)
                 .tabItem {
