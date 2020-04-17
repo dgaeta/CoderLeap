@@ -16,22 +16,19 @@ struct CodeDropAreaView: View {
       let dropDelegate = MyDropDelegate(codeBlocks: $codeBlocks, active: $active)
         
         return VStack {
-
-
-                DropablePlaceHolder(active: self.active == 1, codeBlock: codeBlocks[1])
-              
-                DropablePlaceHolder(active: self.active == 2, codeBlock: codeBlocks[2])
-
-                DropablePlaceHolder(active: self.active == 3, codeBlock: codeBlocks[3])
-
-                DropablePlaceHolder(active: self.active == 4, codeBlock: codeBlocks[4])
-              
-                DropablePlaceHolder(active: self.active == 5, codeBlock: codeBlocks[5])
-                
+          ScrollView{
+            DropablePlaceHolder(active: self.active == 1, codeBlock: codeBlocks[1])
             
+              DropablePlaceHolder(active: self.active == 2, codeBlock: codeBlocks[2])
+
+              DropablePlaceHolder(active: self.active == 3, codeBlock: codeBlocks[3])
+
+              DropablePlaceHolder(active: self.active == 4, codeBlock: codeBlocks[4])
             
+              DropablePlaceHolder(active: self.active == 5, codeBlock: codeBlocks[5])
+          }            
         }
-        .background(Rectangle().fill(Color.gray))
+        .background(Color("CoderLeap-Gray-1"))
         .onDrop(of: ["public.plain-text"], delegate: dropDelegate)
         
     }
@@ -42,11 +39,15 @@ struct CodeDropAreaView: View {
       
       var body: some View {
         let code = Text(codeBlock != nil ? "\(codeBlock!)" : "")
-              .frame(width: 100, height: 50)
+              .frame(width: 160, height: 50)
           
           return Rectangle()
-              .fill(self.active ? Color.green : Color.clear)
-              .frame(width: 100, height: 50)
+              .fill(self.active ? Color.green : Color("CoderLeap-Gray-2"))
+              .frame(width: 170, height: 50)
+              .overlay(Rectangle().stroke(Color.gray, lineWidth: 3))
+              .background(Rectangle().fill(Color.white))
+              .padding(2)
+              .shadow(radius: 1)
               .overlay(code)
       }
   }

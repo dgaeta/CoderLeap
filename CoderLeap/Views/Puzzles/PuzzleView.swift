@@ -87,6 +87,7 @@ struct PuzzleView: View {
         VStack {
           CodeDropAreaView()
           .frame(width: 190, height: 280)
+          .background(Color("CoderLeap-Gray-1"))
         }
           
       }

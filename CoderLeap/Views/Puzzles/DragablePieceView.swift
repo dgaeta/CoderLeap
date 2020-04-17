@@ -13,7 +13,7 @@ struct DragablePieceView: View {
     
     var body: some View {
         Text(codeText)
-            .frame(width: 150, height: 50)
+            .frame(width: 170, height: 60)
             .clipShape(Rectangle())
             .overlay(Rectangle().stroke(Color.black, lineWidth: 3))
             .background(Rectangle().fill(Color.white))
