@@ -19,7 +19,7 @@ struct PuzzleView: View {
   
   var body: some View {
     VStack(alignment: .center) {
-      
+      ProblemStatementView()
       
       HStack {
         

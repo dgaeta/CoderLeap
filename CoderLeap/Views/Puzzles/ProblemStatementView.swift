@@ -20,7 +20,7 @@ struct ProblemStatementView: View {
         }
         
         VStack(alignment: .leading) {
-            Text("> You and your robot, Cody, have crash landed on Mars and you're both excited to begin  your research")
+            Text("> You and your robot, Cody, have crash landed on Mars and you're both excited to begin your research")
                 .font(.caption)
                 .multilineTextAlignment(.leading)
                 .padding([.bottom])
