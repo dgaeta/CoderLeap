@@ -13,13 +13,13 @@ struct App: View {
   
     var body: some View {
       NavigationView {
-        
+
         TabView {
             PuzzleView()
                 .tabItem {
                     Image(systemName: "gamecontroller")
                     Text("Puzzles")
-            }.background(Color.gray)
+            }.background(Color.white)
 
           ChatView(email: userManager.profile.email, chatId: userManager.profile.supportChatId)
                 .tabItem {
