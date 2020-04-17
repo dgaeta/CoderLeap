@@ -24,6 +24,8 @@
 		82328FD9244763CE001002CD /* DragablePieceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82328FD8244763CE001002CD /* DragablePieceView.swift */; };
 		82328FDB244764CF001002CD /* CodeDropAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82328FDA244764CF001002CD /* CodeDropAreaView.swift */; };
 		8247F076244A3CF90076C726 /* Silom.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8247F075244A3CF90076C726 /* Silom.ttf */; };
+		8247F079244A409A0076C726 /* CoderLeapButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8247F078244A409A0076C726 /* CoderLeapButtonStyle.swift */; };
+		8247F07B244A46480076C726 /* ProblemStatementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8247F07A244A46480076C726 /* ProblemStatementView.swift */; };
 		82CA79AF2437848700FC7702 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA79AE2437848700FC7702 /* WelcomeView.swift */; };
 		82CA79B1243784B900FC7702 /* LogoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA79B0243784B900FC7702 /* LogoImageView.swift */; };
 		82CA79B32437924F00FC7702 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA79B22437924F00FC7702 /* AuthenticationView.swift */; };
@@ -83,6 +85,8 @@
 		82328FD8244763CE001002CD /* DragablePieceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragablePieceView.swift; sourceTree = "<group>"; };
 		82328FDA244764CF001002CD /* CodeDropAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDropAreaView.swift; sourceTree = "<group>"; };
 		8247F075244A3CF90076C726 /* Silom.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Silom.ttf; sourceTree = "<group>"; };
+		8247F078244A409A0076C726 /* CoderLeapButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoderLeapButtonStyle.swift; sourceTree = "<group>"; };
+		8247F07A244A46480076C726 /* ProblemStatementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemStatementView.swift; sourceTree = "<group>"; };
 		82CA79AE2437848700FC7702 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		82CA79B0243784B900FC7702 /* LogoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoImageView.swift; sourceTree = "<group>"; };
 		82CA79B22437924F00FC7702 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
@@ -269,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				82CA79B7243793C400FC7702 /* BorderedViewModifier.swift */,
+				8247F078244A409A0076C726 /* CoderLeapButtonStyle.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 				82CA79FD243A479200FC7702 /* PuzzleView.swift */,
 				82328FD8244763CE001002CD /* DragablePieceView.swift */,
 				82328FDA244764CF001002CD /* CodeDropAreaView.swift */,
+				8247F07A244A46480076C726 /* ProblemStatementView.swift */,
 			);
 			path = Puzzles;
 			sourceTree = "<group>";
@@ -562,6 +568,7 @@
 				82CA79BC2437AEC300FC7702 /* Profile.swift in Sources */,
 				821B0BAD24376F1F008BB870 /* AppDelegate.swift in Sources */,
 				82257CF3243FA9CB0093A2DB /* ConfirmSignupView.swift in Sources */,
+				8247F079244A409A0076C726 /* CoderLeapButtonStyle.swift in Sources */,
 				82328FD9244763CE001002CD /* DragablePieceView.swift in Sources */,
 				82CA7A0A243D734500FC7702 /* MessageView.swift in Sources */,
 				821B0BAF24376F1F008BB870 /* SceneDelegate.swift in Sources */,
@@ -569,6 +576,7 @@
 				82CA79B32437924F00FC7702 /* AuthenticationView.swift in Sources */,
 				821CF1E8244169DE00C89B28 /* SupportChat.swift in Sources */,
 				82CA7A06243D724600FC7702 /* ChatView.swift in Sources */,
+				8247F07B244A46480076C726 /* ProblemStatementView.swift in Sources */,
 				82CA79B52437928100FC7702 /* RegisterView.swift in Sources */,
 				821B0BB124376F1F008BB870 /* ContentView.swift in Sources */,
 				82CA79B1243784B900FC7702 /* LogoImageView.swift in Sources */,

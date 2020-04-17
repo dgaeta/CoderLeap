@@ -43,10 +43,10 @@ struct CodeDropAreaView: View {
           
           return Rectangle()
               .fill(self.active ? Color.green : Color("CoderLeap-Gray-2"))
-              .frame(width: 170, height: 50)
+              .frame(width: 170, height: 60)
               .overlay(Rectangle().stroke(Color.gray, lineWidth: 3))
               .background(Rectangle().fill(Color.white))
-              .padding(2)
+              .padding(5)
               .shadow(radius: 1)
               .overlay(code)
       }

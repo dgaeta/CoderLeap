@@ -19,58 +19,7 @@ struct PuzzleView: View {
   
   var body: some View {
     VStack(alignment: .center) {
-      VStack(alignment: .leading) {
-        Text("Problem Statement")
-          
-          .font(.custom("Silom", size: 40))
-          .multilineTextAlignment(.leading)
-          .padding([.bottom])
-          .frame(width: 350)
-          .clipShape(Rectangle())
-          .background(Color.black)
-          .foregroundColor(Color.white)
-          .shadow(radius: 3)
-        
-        Text("> You and your robot, Cody, have crash landed on Mars and you're both excited to begin  your research")
-          .font(.caption)
-          .multilineTextAlignment(.leading)
-          .padding([.bottom])
-          .frame(width: 350)
-          .clipShape(Rectangle())
-          .background(Color.black)
-          .foregroundColor(Color.white)
-          .shadow(radius: 3)
-        
-        Text("> Cody would like to celebrate by making you your favorite snack... a PB&J sandwich.")
-        .font(.caption)
-        .multilineTextAlignment(.leading)
-          .padding([.bottom])
-        .frame(width: 350)
-        .clipShape(Rectangle())
-        .background(Color.black)
-        .foregroundColor(Color.white)
-          .shadow(radius: 3)
-        
-        Text("> But Cody doesnt know how to make sandwiches and needs you to write the code for him to execute it.")
-          .font(.caption)
-          .multilineTextAlignment(.leading)
-          .padding([.bottom])
-          .frame(width: 350)
-          .clipShape(Rectangle())
-          .background(Color.black)
-          .foregroundColor(Color.white)
-          .shadow(radius: 3)
-          
-        
-        Text("Drag the code blocks on the left to the code editor on the right and into the correct order. Good luck, Coder!")
-          .font(.caption)
-          .padding([.bottom])
-          .frame(width: 350)
-          .clipShape(Rectangle())
-          .background(Color.black)
-          .foregroundColor(Color.white)
-          .shadow(radius: 3)
-      }
+      
       
       HStack {
         
@@ -78,6 +27,7 @@ struct PuzzleView: View {
           ScrollView {
             ForEach(0..<self.givenBlocks.count) { index in
               DragablePieceView(codeText: self.givenBlocks[index])
+              .padding(5)
             }
           }
           .frame(width: 190, height: 280)
@@ -90,6 +40,28 @@ struct PuzzleView: View {
           .background(Color("CoderLeap-Gray-1"))
         }
           
+      }
+      // This should be the last, put everything to the top
+      Spacer() 
+      
+      HStack {
+        
+        Button(action: {print("Reset")}) {
+          Text("Reset")
+          .foregroundColor(.white)
+          .padding(15)
+            .frame(width: 80)
+            .background(RoundedRectangle(cornerRadius: 20).fill(Color.red))
+        }
+
+        
+        Button(action: {print("Submit")}) {
+          Text("Submit")
+          .foregroundColor(.white)
+          .padding(15)
+            .frame(width: 250)
+            .background(RoundedRectangle(cornerRadius: 20).fill(Color("CoderLeap-Blue-1")))
+        }
       }
     }
   }

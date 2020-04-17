@@ -15,11 +15,11 @@ struct App: View {
       NavigationView {
 
         TabView {
-            PuzzleView()
-                .tabItem {
-                    Image(systemName: "gamecontroller")
-                    Text("Puzzles")
-            }.background(Color.white)
+          PuzzleView()
+            .tabItem {
+              Image(systemName: "gamecontroller")
+              Text("Puzzles")
+          }.background(Color.white)
 
           ChatView(email: userManager.profile.email, chatId: userManager.profile.supportChatId)
                 .tabItem {
