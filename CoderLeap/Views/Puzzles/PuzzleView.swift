@@ -10,59 +10,25 @@ import SwiftUI
 
 struct PuzzleView: View {
   @State private var givenBlocks = [
-    "Grab the other slice and apply jelly",
-    "Get 2 slices of bread",
-    "Eat sandwiche",
-    "Put both slices together",
-    "Grab a slice and apply peanut butter"
+    0: "Grab the other slice and apply jelly",
+    1: "Get 2 slices of bread",
+    2: "Eat sandwiche",
+    3: "Put both slices together",
+    4: "Grab a slice and apply peanut butter"
   ]
   
   var body: some View {
-    VStack(alignment: .center) {
-      ProblemStatementView()
-      
-      HStack {
+    GeometryReader { proxy in
+      VStack(alignment: .center) {
+        ProblemStatementView()
+          .frame(width: proxy.size.width, height: proxy.size.height/3)
         
-        VStack {
-          ScrollView {
-            ForEach(0..<self.givenBlocks.count) { index in
-              DragablePieceView(codeText: self.givenBlocks[index])
-              .padding(5)
-            }
-          }
-          .frame(width: 190, height: 280)
-          .background(Color("CoderLeap-Blue-1"))
-        }
-          
-        VStack {
-          CodeDropAreaView()
-          .frame(width: 190, height: 280)
-          .background(Color("CoderLeap-Gray-1"))
-        }
-          
-      }
-      // This should be the last, put everything to the top
-      Spacer() 
-      
-      HStack {
+        PuzzleViewCodeGroup(givenBlocks: self.givenBlocks)
+        .frame(width: proxy.size.width, height: proxy.size.height/2)
+        Spacer()
         
-        Button(action: {print("Reset")}) {
-          Text("Reset")
-          .foregroundColor(.white)
-          .padding(15)
-            .frame(width: 80)
-            .background(RoundedRectangle(cornerRadius: 20).fill(Color.red))
-        }
-
-        
-        Button(action: {print("Submit")}) {
-          Text("Submit")
-          .foregroundColor(.white)
-          .padding(15)
-            .frame(width: 250)
-            .background(RoundedRectangle(cornerRadius: 20).fill(Color("CoderLeap-Blue-1")))
-        }
-      }
+        PuzzleViewButtonGroup()
+      }.background(Color.white)
     }
   }
 }

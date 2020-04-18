@@ -9,24 +9,18 @@
 import SwiftUI
 
 struct CodeDropAreaView: View {
-    @State private var codeBlocks: [Int: String] = [:]
-    @State private var active = 0
+  @State var codeBlocks: [Int: String] = [:]
+  @State private var active = -1
+  @State var numberOfPlaceholders: Int
     
     var body: some View {
+      
       let dropDelegate = MyDropDelegate(codeBlocks: $codeBlocks, active: $active)
         
         return VStack {
-          ScrollView{
-            DropablePlaceHolder(active: self.active == 1, codeBlock: codeBlocks[1])
-            
-              DropablePlaceHolder(active: self.active == 2, codeBlock: codeBlocks[2])
-
-              DropablePlaceHolder(active: self.active == 3, codeBlock: codeBlocks[3])
-
-              DropablePlaceHolder(active: self.active == 4, codeBlock: codeBlocks[4])
-            
-              DropablePlaceHolder(active: self.active == 5, codeBlock: codeBlocks[5])
-          }            
+          ForEach(0..<self.numberOfPlaceholders) { index in
+            DropablePlaceHolder(active: self.active == index, codeBlock: self.codeBlocks[index])
+          }
         }
         .background(Color("CoderLeap-Gray-1"))
         .onDrop(of: ["public.plain-text"], delegate: dropDelegate)
@@ -75,7 +69,7 @@ struct CodeDropAreaView: View {
                   DispatchQueue.main.async {
                       if let codeData = codeData as? Data {
                         self.codeBlocks[gridPosition] = String(data: codeData, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
-                        self.active = 0
+                        self.active = -1
                       }
                   }
               }
@@ -99,16 +93,16 @@ struct CodeDropAreaView: View {
       }
       
       func getGridPosition(location: CGPoint) -> Int {
-          if location.y <= 540 {
+          if location.y <= 400 {
+              return 0
+          } else if location.y <= 460 {
               return 1
-          } else if location.y <= 590 {
+          } else if location.y <= 530 {
               return 2
-          } else if location.y <= 640 {
+          } else if location.y <= 620 {
               return 3
-          } else if location.y <= 690 {
+          } else if location.y <= 700 {
               return 4
-          } else if location.y <= 740 {
-              return 5
           }
           else {
               return 0
@@ -119,6 +113,6 @@ struct CodeDropAreaView: View {
 
 struct CodeDropAreaView_Previews: PreviewProvider {
     static var previews: some View {
-        CodeDropAreaView()
+      CodeDropAreaView(numberOfPlaceholders: 5)
     }
 }

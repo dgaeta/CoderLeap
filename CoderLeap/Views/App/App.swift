@@ -19,7 +19,7 @@ struct App: View {
             .tabItem {
               Image(systemName: "gamecontroller")
               Text("Puzzles")
-          }.background(Color.white)
+          }.background(Color.gray)
 
           ChatView(email: userManager.profile.email, chatId: userManager.profile.supportChatId)
                 .tabItem {

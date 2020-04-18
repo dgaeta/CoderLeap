@@ -26,6 +26,8 @@
 		8247F076244A3CF90076C726 /* Silom.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8247F075244A3CF90076C726 /* Silom.ttf */; };
 		8247F079244A409A0076C726 /* CoderLeapButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8247F078244A409A0076C726 /* CoderLeapButtonStyle.swift */; };
 		8247F07B244A46480076C726 /* ProblemStatementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8247F07A244A46480076C726 /* ProblemStatementView.swift */; };
+		8247F07D244B9E1D0076C726 /* PuzzleViewCodeGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8247F07C244B9E1D0076C726 /* PuzzleViewCodeGroup.swift */; };
+		8247F07F244B9EA80076C726 /* PuzzleViewButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8247F07E244B9EA80076C726 /* PuzzleViewButtonGroup.swift */; };
 		82CA79AF2437848700FC7702 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA79AE2437848700FC7702 /* WelcomeView.swift */; };
 		82CA79B1243784B900FC7702 /* LogoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA79B0243784B900FC7702 /* LogoImageView.swift */; };
 		82CA79B32437924F00FC7702 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA79B22437924F00FC7702 /* AuthenticationView.swift */; };
@@ -87,6 +89,8 @@
 		8247F075244A3CF90076C726 /* Silom.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Silom.ttf; sourceTree = "<group>"; };
 		8247F078244A409A0076C726 /* CoderLeapButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoderLeapButtonStyle.swift; sourceTree = "<group>"; };
 		8247F07A244A46480076C726 /* ProblemStatementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemStatementView.swift; sourceTree = "<group>"; };
+		8247F07C244B9E1D0076C726 /* PuzzleViewCodeGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleViewCodeGroup.swift; sourceTree = "<group>"; };
+		8247F07E244B9EA80076C726 /* PuzzleViewButtonGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleViewButtonGroup.swift; sourceTree = "<group>"; };
 		82CA79AE2437848700FC7702 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		82CA79B0243784B900FC7702 /* LogoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoImageView.swift; sourceTree = "<group>"; };
 		82CA79B22437924F00FC7702 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
@@ -282,6 +286,8 @@
 			isa = PBXGroup;
 			children = (
 				82CA79FD243A479200FC7702 /* PuzzleView.swift */,
+				8247F07C244B9E1D0076C726 /* PuzzleViewCodeGroup.swift */,
+				8247F07E244B9EA80076C726 /* PuzzleViewButtonGroup.swift */,
 				82328FD8244763CE001002CD /* DragablePieceView.swift */,
 				82328FDA244764CF001002CD /* CodeDropAreaView.swift */,
 				8247F07A244A46480076C726 /* ProblemStatementView.swift */,
@@ -562,6 +568,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8247F07D244B9E1D0076C726 /* PuzzleViewCodeGroup.swift in Sources */,
 				82CA7A01243D0B4400FC7702 /* App.swift in Sources */,
 				82CA79BA2437ABD400FC7702 /* UserManager.swift in Sources */,
 				82CA79FB2437DB0100FC7702 /* KeyboardFollower.swift in Sources */,
@@ -579,6 +586,7 @@
 				8247F07B244A46480076C726 /* ProblemStatementView.swift in Sources */,
 				82CA79B52437928100FC7702 /* RegisterView.swift in Sources */,
 				821B0BB124376F1F008BB870 /* ContentView.swift in Sources */,
+				8247F07F244B9EA80076C726 /* PuzzleViewButtonGroup.swift in Sources */,
 				82CA79B1243784B900FC7702 /* LogoImageView.swift in Sources */,
 				82CA79B8243793C400FC7702 /* BorderedViewModifier.swift in Sources */,
 				82CA7A03243D706500FC7702 /* ChatHelper.swift in Sources */,
