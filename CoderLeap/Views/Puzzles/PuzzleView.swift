@@ -22,12 +22,16 @@ struct PuzzleView: View {
       VStack(alignment: .center) {
         ProblemStatementView()
           .frame(width: proxy.size.width, height: proxy.size.height/3)
+          .shadow(color: Color(red: 0.50, green: 0.50, blue: 0.50),
+          radius: 10.00, x: 0.00, y: 5)
+          .padding([.bottom], 10)
         
         PuzzleViewCodeGroup(givenBlocks: self.givenBlocks)
         .frame(width: proxy.size.width, height: proxy.size.height/2)
         Spacer()
         
         PuzzleViewButtonGroup()
+          .padding([.bottom], 20)
       }.background(Color.white)
     }
   }
