@@ -9,17 +9,18 @@
 import SwiftUI
 
 struct CodeDropAreaView: View {
-  @State var codeBlocks: [Int: String] = [:]
+  @ObservedObject var puzzleHelper: PuzzleHelper
+  
   @State private var active = -1
   @State var numberOfPlaceholders: Int
     
     var body: some View {
       
-      let dropDelegate = MyDropDelegate(codeBlocks: $codeBlocks, active: $active)
+      let dropDelegate = MyDropDelegate(puzzleHelper: self.puzzleHelper, active: $active)
         
         return VStack {
           ForEach(0..<self.numberOfPlaceholders) { index in
-            DropablePlaceHolder(active: self.active == index, codeBlock: self.codeBlocks[index])
+            DropablePlaceHolder(active: self.active == index, codeBlock: self.puzzleHelper.dragAndDropOrder[index])
           }
         }
         .background(Color("CoderLeap-Gray-1"))
@@ -47,8 +48,9 @@ struct CodeDropAreaView: View {
   }
   
   struct MyDropDelegate: DropDelegate {
-      @Binding var codeBlocks: [Int: String]
-      @Binding var active: Int
+    @ObservedObject var puzzleHelper: PuzzleHelper
+    
+    @Binding var active: Int
       
       func validateDrop(info: DropInfo) -> Bool {
           return info.hasItemsConforming(to: ["public.plain-text"])
@@ -68,7 +70,9 @@ struct CodeDropAreaView: View {
               item.loadItem(forTypeIdentifier: "public.plain-text", options: nil) { (codeData, error) in
                   DispatchQueue.main.async {
                       if let codeData = codeData as? Data {
-                        self.codeBlocks[gridPosition] = String(data: codeData, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
+                        let codeString: String = String(data: codeData, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!
+                        self.puzzleHelper.dragAndDropOrder[gridPosition] = codeString
+                        self.puzzleHelper.saveOrder(codeWithPosition: codeString, slotDropped: gridPosition)
                         self.active = -1
                       }
                   }
@@ -113,6 +117,6 @@ struct CodeDropAreaView: View {
 
 struct CodeDropAreaView_Previews: PreviewProvider {
     static var previews: some View {
-      CodeDropAreaView(numberOfPlaceholders: 5)
+      CodeDropAreaView(puzzleHelper: PuzzleHelper(), numberOfPlaceholders: 5)
     }
 }

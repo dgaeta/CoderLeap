@@ -9,10 +9,12 @@
 import SwiftUI
 
 struct PuzzleViewButtonGroup: View {
+  @ObservedObject var puzzleHelper: PuzzleHelper
+  
     var body: some View {
         HStack {
           
-          Button(action: {print("Reset")}) {
+          Button(action: self.puzzleHelper.resetOrder) {
             Text("Reset")
             .foregroundColor(.white)
             .padding(15)
@@ -21,7 +23,7 @@ struct PuzzleViewButtonGroup: View {
           }
 
           
-          Button(action: {print("Submit")}) {
+          Button(action: self.puzzleHelper.checkIfCorrect) {
             Text("Submit")
             .foregroundColor(.white)
             .padding(15)
@@ -34,6 +36,6 @@ struct PuzzleViewButtonGroup: View {
 
 struct PuzzleViewButtonGroup_Previews: PreviewProvider {
     static var previews: some View {
-        PuzzleViewButtonGroup()
+        PuzzleViewButtonGroup(puzzleHelper: PuzzleHelper())
     }
 }

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct PuzzleViewCodeGroup: View {
-  @State var givenBlocks: [Int: String]
+  @ObservedObject var puzzleHelper: PuzzleHelper
   
     var body: some View {
       GeometryReader { proxy in
@@ -17,8 +17,8 @@ struct PuzzleViewCodeGroup: View {
             
             VStack {
               ScrollView {
-                ForEach(0..<self.givenBlocks.count) { index in
-                  DragablePieceView(codeText: self.givenBlocks[index]!)
+                ForEach(0..<self.puzzleHelper.givenBlocks.count) { index in
+                  DragablePieceView(codeText: self.puzzleHelper.givenBlocks[index]!)
                   .padding(5)
                 }
               }
@@ -29,7 +29,7 @@ struct PuzzleViewCodeGroup: View {
             }
               
             VStack {
-              CodeDropAreaView(numberOfPlaceholders: self.givenBlocks.count)
+              CodeDropAreaView(puzzleHelper: self.puzzleHelper, numberOfPlaceholders: self.puzzleHelper.givenBlocks.count)
               .frame(width: (proxy.size.width/2) - 20)
               .background(Color("CoderLeap-Gray-1"))
               .padding([.trailing], 20)
@@ -43,12 +43,6 @@ struct PuzzleViewCodeGroup: View {
 struct PuzzleViewCodeGroup_Previews: PreviewProvider {
 
     static var previews: some View {
-      PuzzleViewCodeGroup(givenBlocks: [0:
-          "Grab the other slice and apply jelly",
-                                        1: "Get 2 slices of bread",
-                                        2: "Eat sandwiche",
-                                        3: "Put both slices together",
-                                        4: "Grab a slice and apply peanut butter"
-        ])
+      PuzzleViewCodeGroup(puzzleHelper: PuzzleHelper())
     }
 }

@@ -15,7 +15,7 @@ struct App: View {
       NavigationView {
 
         TabView {
-          PuzzleView()
+          PuzzleView(puzzleHelper: PuzzleHelper())
             .tabItem {
               Image(systemName: "gamecontroller")
               Text("Puzzles")
@@ -28,6 +28,7 @@ struct App: View {
                 }
               .environmentObject(self.userManager)
         }
+        .background(Color.white)
         .navigationBarTitle(Text("CoderLeap"), displayMode: .inline)
         .navigationBarItems(leading:
           Button("Sign out") {
