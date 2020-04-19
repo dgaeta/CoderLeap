@@ -7,9 +7,26 @@
 //
 
 import SwiftUI
+import Combine
 
 struct PuzzleView: View {
   @ObservedObject var puzzleHelper: PuzzleHelper
+//  @State var showTryAgain = false
+//  @State var showIsCorrect = false
+//
+//  private var cancellables = Set<AnyCancellable>()
+//
+//  init(puzzleHelper: PuzzleHelper) {
+//    self.puzzleHelper = puzzleHelper
+//    self.puzzleHelper.$isCorrect
+//      .receive(on: RunLoop.main)
+//      .assign(to: \PuzzleView.showIsCorrect, on: self)
+//      .store(in: &cancellables)
+//    self.puzzleHelper.$showTryAgain
+//      .receive(on: RunLoop.main)
+//      .assign(to: \PuzzleView.showTryAgain, on: self)
+//      .store(in: &cancellables)
+//  }
   
   var body: some View {
     GeometryReader { proxy in
@@ -28,6 +45,21 @@ struct PuzzleView: View {
           .padding([.bottom], 20)
       }.background(Color.white)
     }
+    .sheet(isPresented: self.$puzzleHelper.showFeedback,
+           onDismiss: { self.puzzleHelper.dismissFeedback() },
+           content: {
+            Group {
+              if self.puzzleHelper.isCorrect {
+                Text("That's correct, Coder!")
+              } else {
+                Text("Try again, Coder!")
+              }
+            }
+            }
+    )
+//      .sheet(isPresented: self.$puzzleHelper.isCorrect,
+//           onDismiss: { self.puzzleHelper.isCorrectDismissed() },
+//           content: { Text("Try again, Coder!") })
   }
 }
 

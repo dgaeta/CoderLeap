@@ -15,6 +15,7 @@ class PuzzleHelper : ObservableObject {
   
   @Published var dragAndDropOrder: [Int: String] = [:]
   
+  @Published var showFeedback: Bool = false
   @Published var isCorrect: Bool = false
   @Published var showTryAgain: Bool = false
   
@@ -32,9 +33,14 @@ class PuzzleHelper : ObservableObject {
     self.dragAndDropOrder[slotDropped] = codeWithPosition
   }
   
+  func dismissFeedback() {
+    self.showFeedback = false
+  }
+  
   func checkIfCorrect() {
     if self.dragAndDropOrder.count != self.givenBlocks.count {
-      self.showTryAgain = true
+      self.isCorrect = false
+      self.showFeedback = true
       print("TRY AGAIN, CODER!")
       return
     }
@@ -46,17 +52,16 @@ class PuzzleHelper : ObservableObject {
       let userOrder: Int = (userInput.prefix(1) as NSString).integerValue
       
       if userOrder != index {
-        self.showTryAgain = true
+        self.isCorrect = false
+        self.showFeedback = true
         print("TRY AGAIN, CODER!")
         return
       }
     }
     
     self.isCorrect = true
-    
-    if self.isCorrect {
-      print("YOU'RE RIGHT, CODER!")
-    }
+    print("YOU'RE RIGHT, CODER!")
+    self.showFeedback = true
   }
   
   func resetOrder() {
